@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+
+        <TextView android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/lblLoginView"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/fontSizeLblView"
+            android:textColor="@color/textDefault"
+            android:id="@+id/lblLoginView"
+            android:gravity="center"
+            android:layout_marginTop="15dp"/>
+
+        <TextView android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/lblUsername"
+            android:textSize="@dimen/fontSizeNormal"
+            android:textColor="@color/textDefault"
+            android:id="@+id/lblUsername"
+            android:layout_below="@+id/lblLoginView"
+            android:layout_marginTop="55dp"/>
+
+        <EditText style="@style/InputDefault"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="phone"
+            android:layout_below="@+id/lblUsername"
+            android:hint="@string/hintUsername"
+            android:layout_marginTop="5dp"
+            android:id="@+id/ETUsername"
+            android:background="@drawable/border_edt"/>
+
+        <TextView android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/lblPassword"
+            android:textSize="@dimen/fontSizeNormal"
+            android:textColor="@color/textDefault"
+            android:id="@+id/lblPassword"
+            android:layout_below="@+id/ETUsername"
+            android:layout_marginTop="20dp" />
+
+        <EditText style="@style/InputDefault"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:layout_below="@+id/lblPassword"
+            android:hint="@string/hintPassword"
+            android:layout_marginTop="5dp"
+            android:id="@+id/ETPassword"
+            android:background="@drawable/border_edt"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ETPassword"
+            android:textSize="@dimen/fontSizeDefault"
+            android:textColor="@color/colorBlue"
+            android:text="@string/lblForgetPW"
+            android:gravity="right"
+            android:id="@+id/TVForgetPW"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVForgetPW"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/btn_radius"
+            android:id="@+id/btnToApp"
+            android:text="@string/lblBtnLogin"
+            android:textColor="@color/textDefault"
+            android:textSize="@dimen/fontSizeDefault"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"/>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">HDDTCustomer</string>
+
+    <string name="welcome">Hóa đơn điện tử</string>
+
+    <!--login view-->
+    <string name="lblLoginView">Đăng nhập HĐĐT</string>
+    <string name="lblUsername">Tên đăng nhập:</string>
+    <string name="lblPassword">Mật khẩu:</string>
+    <string name="lblForgetPW"><u>Quên mật khẩu</u></string>
+    <string name="lblBtnLogin">Đăng nhập</string>
+    <string name="hintUsername">mã KH or số ĐT</string>
+    <string name="hintPassword">******</string>
+    <string name="phoneNumber_error">Your phone invalid</string>
+    <string name="password_error">Your password invalid</string>
+
+    <!--home-->
+    <string name="lblHome">Trang Chủ</string>
+
+
+    <!--icon font awesome-->
+    <string name="icon_chevron_left">&#xf053; " Back "</string>
+    <string name="icon_menu">&#xf0c9; ""</string>
+    <string name="icon_right">&#xf022; ""</string>
+    <string name="icon_check">&#xf00c; ""</string>
+    <string name="icon_circle">&#xf10c; ""</string>
+    <string name="icon_search">&#xf002; ""</string>
+    <string name="icon_chevron_circle_right">&#xf138; ""</string>
+</resources>
