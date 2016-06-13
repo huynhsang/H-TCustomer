@@ -1,0 +1,4 @@
+git clone 
+open android studio
+run
+----thanks---
