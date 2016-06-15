@@ -53,16 +53,13 @@
             android:background="#000"
             android:layout_below="@+id/headerMainView"
             android:id="@+id/headerBorder"/>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/headerBorder">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/fragMainContent"/>
-        </ScrollView>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragMainContent"
+            android:layout_below="@+id/headerBorder"/>
+
 
     </RelativeLayout>
 

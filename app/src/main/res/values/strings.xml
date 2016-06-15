@@ -16,6 +16,7 @@
 
     <!--home-->
     <string name="lblHome">Trang Chủ</string>
+    <string name="lblBill">Danh Sách Hóa Đơn</string>
 
 
     <!--icon font awesome-->
@@ -26,4 +27,14 @@
     <string name="icon_circle">&#xf10c; ""</string>
     <string name="icon_search">&#xf002; ""</string>
     <string name="icon_chevron_circle_right">&#xf138; ""</string>
+    <string name="icon_clock">&#xf017; ""</string>
+    <string name="icon_dollar">&#xf155; ""</string>
+    <string name="icon_check_circle">&#xf046;""</string>
+
+    <!--list bill-->
+    <string name="lblPeriod">Kỳ hóa đơn: </string>
+    <string name="lblCSDK">CSĐK: </string>
+    <string name="lblCSCK">CSCK: </string>
+    <string name="lblSL">SL: </string>
+    <string name="lblSoTien">Số tiền: </string>
 </resources>

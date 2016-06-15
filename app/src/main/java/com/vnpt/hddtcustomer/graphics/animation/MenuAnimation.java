@@ -57,13 +57,6 @@ public class MenuAnimation implements Animation.AnimationListener{
 
     @Override
     public void onAnimationStart(Animation animation) {
-        /*Thread thread = new Thread(){
-            @Override
-            public void run() {
-                dimMainContentLayout();
-            }
-        };
-        thread.start();*/
     }
 
     @Override

@@ -3,6 +3,7 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlue">#3b5998</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorGreen">#208a00</color>
     <color name="colorTextHint">#c6bebe</color>
 
     <color name="textDefault">#000000</color>

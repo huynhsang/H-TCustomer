@@ -10,7 +10,7 @@
         android:textSize="@dimen/fontSizeDefault"
         android:textColor="@color/textDefault"
         android:gravity="center"
-        android:background="@drawable/bottom_border_default"
+        android:background="@drawable/border_bottom_default"
         android:paddingBottom="25dp"
         android:paddingTop="25dp"
         />
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/bottom_border_default"
+        android:background="@drawable/border_bottom_default"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 
@@ -39,7 +39,7 @@
             android:textColor="@color/textDefault"
             android:text="(!)"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp" />
 
     </RelativeLayout>
 
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/bottom_border_default"
+        android:background="@drawable/border_bottom_default"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 
@@ -78,7 +78,7 @@
         android:textSize="@dimen/fontSizeDefault"
         android:textColor="@color/textDefault"
         android:gravity="center"
-        android:background="@drawable/bottom_border_default"
+        android:background="@drawable/border_bottom_default"
         android:paddingBottom="25dp"
         android:paddingTop="25dp"
         />
@@ -87,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/bottom_border_default"
+        android:background="@drawable/border_bottom_default"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 
@@ -115,7 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/bottom_border_default"
+        android:background="@drawable/border_bottom_default"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 

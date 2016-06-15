@@ -9,7 +9,7 @@ import com.vnpt.hddtcustomer.interfaces.OnLoginFinishedListener;
 
 public class LoginInteractorImp implements LoginInteractor {
 
-    private static final int LOGIN_TIMEOUT=3000;
+    private static final int LOGIN_TIMEOUT=1000;
 
     @Override
     public void checkLogin(final String phoneNumber, final String password, final OnLoginFinishedListener listener) {
