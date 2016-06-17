@@ -9,4 +9,5 @@
     <dimen name="fontSizeTitleMain">20sp</dimen>
     <dimen name="fontSizeNormal">24sp</dimen>
     <dimen name="fontSizeLblView">36sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

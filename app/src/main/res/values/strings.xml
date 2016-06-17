@@ -30,6 +30,7 @@
     <string name="lblBill">Danh Sách Hóa Đơn</string>
 
 
+
     <!--icon font awesome-->
     <string name="icon_chevron_left">&#xf053; " Back "</string>
     <string name="icon_menu">&#xf0c9; ""</string>
@@ -40,6 +41,35 @@
     <string name="icon_search">&#xf002; ""</string>
     <string name="icon_bar_chart">&#xf080; ""</string>
     <string name="icon_chevron_circle_right">&#xf138; ""</string>
+
+    <string name="icon_refresh">&#xf021; ""</string>
+    <string name="icon_file_text">&#xf15c; ""</string>
+    <string name="icon_paper_plane">&#xf1d8; ""</string>
+
+    <string name="phss_title1">Tiêu đề:</string>
+    <string name="phss_edt1">Sai sót HD kỳ 1 -2014</string>
+    <string name="phss_title2">Nội dung:</string>
+    <string name="phss_edt2">Sai địa chỉ công ty, \nCần cố gắng nhiều hơn</string>
+
+    <string name="title_activity_cthd">CTHDActivity</string>
+    <string name="cthd_sts">Trạng thái:</string>
+    <string name="cthd_stsV">Đã thanh toán</string>
+    <string name="cthd_timepay">T/g thanh toán:</string>
+    <string name="cthd_timepayV">8h ngày 02/06/2015</string>
+    <string name="cthd_formpay">Hình thức thanh toán:</string>
+    <string name="cthd_formpayV" >Tiền mặt</string>
+    <string name="cthd_time">Thời gian</string>
+    <string name="cthd_timeV" />
+    <string name="cthd_fi">Chỉ số đầu</string>
+    <string name="cthd_di">Chỉ số cuối</string>
+    <string name="cthd_fiV" />
+    <string name="cthd_diV" />
+    <string name="cthd_moneyV">500.000</string>
+    <string name="cthd_moneyCur">vnd</string>
+    <string name="cthd_signKH">Chữ kí của KH</string>
+    <string name="cthd_signTT">Chữ kí người thu tiền</string>
+    <string name="cthd_money_label">Thành tiền</string>
+    <string name="cthd_hdtd">Hóa đơn tiền điện</string>
     <string name="icon_clock">&#xf017; ""</string>
     <string name="icon_dollar">&#xf155; ""</string>
     <string name="icon_check_circle">&#xf046;""</string>

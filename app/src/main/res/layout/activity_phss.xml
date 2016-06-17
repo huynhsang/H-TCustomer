@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".views.activity.PHSSActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/colorTextHint">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontSizeNormal"
+        android:text="@string/icon_menu"
+        android:textColor="@color/textDefault"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/phss_btntoLeftMenu"
+        android:clickable="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontSizeTitleMain"
+        android:textColor="@color/textDefault"
+        android:text="Phản hồi sai sót"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/phss_titleMainView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontSizeNormal"
+        android:textColor="@color/textDefault"
+        android:text="@string/icon_paper_plane"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/phss_btntoPhanHoi"
+        android:clickable="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+       >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/phss_title1"
+            android:textSize="24dp"
+            android:textColor="@color/textDefault"
+            android:id="@+id/phss_label1"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phss_edt1"
+
+            android:text="@string/phss_edt1"
+            android:textSize="24dp"
+            android:textColor="@color/textDefault"
+            android:layout_toEndOf="@+id/phss_label1"
+            android:background="@drawable/border_edt1"
+            android:layout_centerVertical="true"
+            android:padding="5dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/phss_title2"
+        android:textColor="@color/textDefault"
+        android:textSize="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/phss_edt2"
+        android:layout_weight="0.5"
+        android:background="@drawable/border_edt1"
+        android:text="@string/phss_edt2"
+        android:textSize="24sp"
+        android:textColor="@color/textDefault"
+        android:gravity="top|left"
+        android:textAlignment="gravity"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+</LinearLayout>

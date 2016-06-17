@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".views.activity.CTHDActivity"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/colorTextHint">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:text="@string/icon_menu"
+            android:textColor="@color/textDefault"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/cthd_btntoBack"
+            android:clickable="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeTitleMain"
+            android:textColor="@color/textDefault"
+            android:text="Chi tiết"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/cthd_titleMainView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:textColor="@color/textDefault"
+            android:text="@string/icon_refresh"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/cthd_btntoRefresh"
+            android:clickable="true"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_sts"
+            android:id="@+id/cthd_sts"
+            android:textSize="22sp"
+            android:textColor="@color/textDefault"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_stsV"
+            android:id="@+id/cthd_stsV"
+            android:layout_toEndOf="@id/cthd_sts"
+            android:layout_marginLeft="22dp"
+            android:textSize="22sp"
+            android:textColor="@color/textDefault"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_timepay"
+            android:id="@+id/cthd_timepay"
+            android:textSize="22sp"
+            android:textColor="@color/textDefault"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_timepayV"
+            android:id="@+id/cthd_timepayV"
+            android:layout_toEndOf="@id/cthd_timepay"
+            android:layout_marginLeft="5dp"
+            android:textSize="22sp"
+            android:textColor="@color/textDefault"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_formpay"
+            android:id="@+id/cthd_formpay"
+            android:textSize="22sp"
+            android:textColor="@color/textDefault"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/cthd_formpayV"
+            android:id="@+id/cthd_formpayV"
+            android:layout_toEndOf="@id/cthd_formpay"
+            android:layout_marginLeft="20dp"
+            android:textSize="22sp"
+            android:textColor="@color/textDefault"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="@string/cthd_hdtd"
+        android:id="@+id/cthd_hdtd"
+        android:textColor="@color/textDefault"
+        android:textSize="22sp"
+        android:layout_weight="0.15"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:paddingLeft="80dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_border_default"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_time"
+            android:id="@+id/cthd_time"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_timeV"
+            android:id="@+id/cthd_timeV"
+            android:layout_toEndOf="@id/cthd_time"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_border_default"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_fi"
+            android:id="@+id/cthd_fi"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_fiV"
+            android:id="@+id/cthd_fiV"
+            android:layout_toEndOf="@id/cthd_fi"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_border_default"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_di"
+            android:id="@+id/cthd_di"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_diV"
+            android:id="@+id/cthd_diV"
+            android:layout_toEndOf="@id/cthd_di"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/cthd_money_label"
+        android:id="@+id/cthd_moneyTlt_label"
+        android:layout_weight="0.15"
+        android:textAlignment="gravity"
+        android:textColor="@color/textDefault"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:paddingLeft="80dp"
+        android:background="@drawable/bottom_border_default"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_border_default"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_moneyV"
+            android:id="@+id/cthd_moneyV"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingLeft="80dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_moneyCur"
+            android:id="@+id/cthd_moneyCur"
+            android:layout_toEndOf="@id/cthd_moneyV"
+            android:textColor="@color/textDefault"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_signKH"
+            android:textColor="@color/textDefault"
+            android:id="@+id/cthd_signKH" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_signTT"
+            android:id="@+id/cthd_signTT"
+            android:textColor="@color/textDefault"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+</LinearLayout>
