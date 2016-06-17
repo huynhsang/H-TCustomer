@@ -12,15 +12,11 @@
     <string name="hintUsername">mã KH or số ĐT</string>
     <string name="hintPassword">******</string>
 
+    <!--forgotPW view-->
     <string name="forgotPassTitle">Quên Mật Khẩu</string>
     <string name="forgotPassGuide">Nhập số điện thoại để phục hồi mật khẩu:</string>
     <string name="forgotPassHint">Số điện thoại</string>
     <string name="forgotPassBtn">Gửi</string>
-
-    <string name="billListTitle">Danh Sách Hóa Đơn</string>
-
-    <string name="guideTitle">Hướng Dẫn Sử Dụng</string>
-    <string name="guideContent">Nội dung hướng dẫn sử dụng</string>
 
     <string name="phoneNumber_error">Your phone invalid</string>
     <string name="password_error">Your password invalid</string>
@@ -28,28 +24,6 @@
     <!--home-->
     <string name="lblHome">Trang Chủ</string>
     <string name="lblBill">Danh Sách Hóa Đơn</string>
-
-
-
-    <!--icon font awesome-->
-    <string name="icon_chevron_left">&#xf053; " Back "</string>
-    <string name="icon_menu">&#xf0c9; ""</string>
-    <string name="icon_arrow_left">&#xf060; ""</string>
-    <string name="icon_right">&#xf022; ""</string>
-    <string name="icon_check">&#xf00c; ""</string>
-    <string name="icon_circle">&#xf10c; ""</string>
-    <string name="icon_search">&#xf002; ""</string>
-    <string name="icon_bar_chart">&#xf080; ""</string>
-    <string name="icon_chevron_circle_right">&#xf138; ""</string>
-
-    <string name="icon_refresh">&#xf021; ""</string>
-    <string name="icon_file_text">&#xf15c; ""</string>
-    <string name="icon_paper_plane">&#xf1d8; ""</string>
-
-    <string name="phss_title1">Tiêu đề:</string>
-    <string name="phss_edt1">Sai sót HD kỳ 1 -2014</string>
-    <string name="phss_title2">Nội dung:</string>
-    <string name="phss_edt2">Sai địa chỉ công ty, \nCần cố gắng nhiều hơn</string>
 
     <string name="title_activity_cthd">CTHDActivity</string>
     <string name="cthd_sts">Trạng thái:</string>
@@ -70,9 +44,11 @@
     <string name="cthd_signTT">Chữ kí người thu tiền</string>
     <string name="cthd_money_label">Thành tiền</string>
     <string name="cthd_hdtd">Hóa đơn tiền điện</string>
-    <string name="icon_clock">&#xf017; ""</string>
-    <string name="icon_dollar">&#xf155; ""</string>
-    <string name="icon_check_circle">&#xf046;""</string>
+
+    <string name="phss_title1">Tiêu đề:</string>
+    <string name="phss_edt1">Sai sót HD kỳ 1 -2014</string>
+    <string name="phss_title2">Nội dung:</string>
+    <string name="phss_edt2">Sai địa chỉ công ty, \nCần cố gắng nhiều hơn</string>
 
     <!--list bill-->
     <string name="lblPeriod">Kỳ hóa đơn: </string>
@@ -80,4 +56,28 @@
     <string name="lblCSCK">CSCK: </string>
     <string name="lblSL">SL: </string>
     <string name="lblSoTien">Số tiền: </string>
+
+    <!--guide view-->
+    <string name="guideTitle">Hướng Dẫn Sử Dụng</string>
+    <string name="guideContent">Nội dung hướng dẫn sử dụng</string>
+
+    <!--icon font awesome-->
+    <string name="icon_chevron_left">&#xf053; " Back "</string>
+    <string name="icon_menu">&#xf0c9; ""</string>
+    <string name="icon_arrow_left">&#xf060; ""</string>
+    <string name="icon_right">&#xf022; ""</string>
+    <string name="icon_check">&#xf00c; ""</string>
+    <string name="icon_circle">&#xf10c; ""</string>
+    <string name="icon_search">&#xf002; ""</string>
+    <string name="icon_bar_chart">&#xf080; ""</string>
+    <string name="icon_chevron_circle_right">&#xf138; ""</string>
+
+    <string name="icon_refresh">&#xf021; ""</string>
+    <string name="icon_file_text">&#xf15c; ""</string>
+    <string name="icon_paper_plane">&#xf1d8; ""</string>
+
+    <string name="icon_clock">&#xf017; ""</string>
+    <string name="icon_dollar">&#xf155; ""</string>
+    <string name="icon_check_circle">&#xf046;""</string>
+
 </resources>
