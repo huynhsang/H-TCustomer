@@ -5,9 +5,11 @@
     <color name="colorBlack">#000000</color>
     <color name="colorGreen">#208a00</color>
     <color name="colorTextHint">#c6bebe</color>
+    <color name="colorGreenV1">#64d81e</color>
 
     <color name="textDefault">#000000</color>
     <color name="edt_pressed">#99CBFF</color>
     <color name="edt_focused">#CEF7F6</color>
     <color name="edt_default">#000000</color>
+    <color name="bg_chargesDetail">#e9ebee</color>
 </resources>

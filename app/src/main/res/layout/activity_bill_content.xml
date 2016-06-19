@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerMainView"
+        android:padding="5dp"
+        android:background="@color/colorTextHint">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:text="@string/icon_arrow_left"
+            android:textColor="@color/textDefault"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/btnToBack"
+            android:clickable="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeTitleMain"
+            android:textColor="@color/textDefault"
+            android:text="@string/lblBillContent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/titleMainView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:textColor="@color/textDefault"
+            android:text="@string/icon_share"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btnToShare"
+            android:clickable="true"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:background="#000"
+        android:layout_below="@+id/headerMainView"
+        android:id="@+id/headerBorder"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerBorder"
+        android:src="@drawable/bill_content"
+        android:contentDescription="@string/descrip_bill_image" />
+</RelativeLayout>

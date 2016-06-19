@@ -25,25 +25,39 @@
     <string name="lblHome">Trang Chủ</string>
     <string name="lblBill">Danh Sách Hóa Đơn</string>
 
+    <string name="lblSearch">Search...</string>
+
+    <!--lookup-->
+    <string name="lblBillLookup">Tra cứu hóa đơn</string>
+    <string name="lblBillNumber">Số hóa đơn</string>
+    <string name="lblBillType">Loại hóa đơn</string>
+    <string name="lblBillTime">Thời gian</string>
+    <string name="lblBillSearch">Tìm kiếm</string>
+
+    <!--guide-->
+    <string name="lblConfig_mes">Thông báo khi có HD mới</string>
+
+    <!--Bill detail-->
+    <string name="lblBillDetail">Chi tiết</string>
     <string name="title_activity_cthd">CTHDActivity</string>
     <string name="cthd_sts">Trạng thái:</string>
-    <string name="cthd_stsV">Đã thanh toán</string>
     <string name="cthd_timepay">T/g thanh toán:</string>
     <string name="cthd_timepayV">8h ngày 02/06/2015</string>
     <string name="cthd_formpay">Hình thức thanh toán:</string>
     <string name="cthd_formpayV" >Tiền mặt</string>
-    <string name="cthd_time">Thời gian</string>
-    <string name="cthd_timeV" />
-    <string name="cthd_fi">Chỉ số đầu</string>
-    <string name="cthd_di">Chỉ số cuối</string>
-    <string name="cthd_fiV" />
-    <string name="cthd_diV" />
-    <string name="cthd_moneyV">500.000</string>
+    <string name="cthd_time">Thời gian:</string>
+
+    <string name="cthd_fi">Chỉ số đầu:</string>
+    <string name="cthd_di">Chỉ số cuối:</string>
     <string name="cthd_moneyCur">vnd</string>
     <string name="cthd_signKH">Chữ kí của KH</string>
     <string name="cthd_signTT">Chữ kí người thu tiền</string>
     <string name="cthd_money_label">Thành tiền</string>
     <string name="cthd_hdtd">Hóa đơn tiền điện</string>
+
+    <!--Bill content-->
+    <string name="lblBillContent">Nội dung hóa đơn</string>
+    <string name="descrip_bill_image">Bill Content</string>
 
     <string name="phss_title1">Tiêu đề:</string>
     <string name="phss_edt1">Sai sót HD kỳ 1 -2014</string>
@@ -57,10 +71,26 @@
     <string name="lblSL">SL: </string>
     <string name="lblSoTien">Số tiền: </string>
 
+    <!--chart-->
+    <string name="lblChart">Biểu đồ sử dụng</string>
+
     <!--guide view-->
     <string name="guideTitle">Hướng Dẫn Sử Dụng</string>
     <string name="guideContent">Nội dung hướng dẫn sử dụng</string>
 
+    <!--notification-->
+    <string name="lblNotify">Thông báo cước</string>
+    <!--charges detail-->
+    <string name="lblChargesDetail">Chi tiết cước</string>
+    <string name="lblToSeeChart">Xem biểu đồ</string>
+    <string name="lblPeriodEM">Tiền điện kỳ trước</string>
+    <string name="ex_name">Huỳnh Thanh Sang</string>
+    <string name="ex_cardID">PC012112016</string>
+    <string name="ex_address">K90/06 Đồng Kè, Q.Liên Chiểu, Tp.Đà nẵng </string>
+
+    <!--logout-->
+    <string name="lblLgNotices">Thông báo</string>
+    <string name="lblLgMsg">Bạn muốn thoát khỏi chương trình</string>
     <!--icon font awesome-->
     <string name="icon_chevron_left">&#xf053; " Back "</string>
     <string name="icon_menu">&#xf0c9; ""</string>
@@ -71,10 +101,12 @@
     <string name="icon_search">&#xf002; ""</string>
     <string name="icon_bar_chart">&#xf080; ""</string>
     <string name="icon_chevron_circle_right">&#xf138; ""</string>
+    <string name="icon_calendar">&#xf073; ""</string>
 
     <string name="icon_refresh">&#xf021; ""</string>
     <string name="icon_file_text">&#xf15c; ""</string>
     <string name="icon_paper_plane">&#xf1d8; ""</string>
+    <string name="icon_share">&#xf1e0; ""</string>
 
     <string name="icon_clock">&#xf017; ""</string>
     <string name="icon_dollar">&#xf155; ""</string>

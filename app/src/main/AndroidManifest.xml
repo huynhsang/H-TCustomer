@@ -19,6 +19,10 @@
         </activity>
         <activity android:name=".views.activity.LoginActivity"/>
         <activity android:name=".views.activity.MainActivity"/>
+        <activity android:name=".views.activity.ForgotPassActivity"/>
+        <activity android:name=".views.activity.CTHDActivity"/>
+        <activity android:name=".views.activity.BillContentActivity"/>
+        <activity android:name=".views.activity.ChargesDetailActivity"/>
     </application>
 
 </manifest>

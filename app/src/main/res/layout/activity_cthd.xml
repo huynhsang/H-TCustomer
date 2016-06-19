@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeNormal"
-            android:text="@string/icon_menu"
+            android:text="@string/icon_arrow_left"
             android:textColor="@color/textDefault"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
@@ -30,10 +30,22 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeTitleMain"
             android:textColor="@color/textDefault"
-            android:text="Chi tiết"
+            android:text="@string/lblBillDetail"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:id="@+id/cthd_titleMainView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:textColor="@color/textDefault"
+            android:text="@string/icon_file_text"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/cthd_btntoRefresh"
+            android:layout_marginRight="5dp"
+            android:id="@+id/cthd_btntoMoreDetail"
+            android:clickable="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -58,7 +70,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/cthd_sts"
             android:id="@+id/cthd_sts"
-            android:textSize="22sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textColor="@color/textDefault"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"/>
@@ -67,12 +79,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_stsV"
-            android:id="@+id/cthd_stsV"
+            android:id="@+id/cthd_status"
             android:layout_toEndOf="@id/cthd_sts"
             android:layout_marginLeft="22dp"
-            android:textSize="22sp"
-            android:textColor="@color/textDefault"/>
+            android:textSize="@dimen/fontSizeDefault"
+            android:textColor="@color/textDefault" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -86,7 +97,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/cthd_timepay"
             android:id="@+id/cthd_timepay"
-            android:textSize="22sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textColor="@color/textDefault"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"/>
@@ -99,7 +110,7 @@
             android:id="@+id/cthd_timepayV"
             android:layout_toEndOf="@id/cthd_timepay"
             android:layout_marginLeft="5dp"
-            android:textSize="22sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textColor="@color/textDefault"/>
     </RelativeLayout>
 
@@ -114,7 +125,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/cthd_formpay"
             android:id="@+id/cthd_formpay"
-            android:textSize="22sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textColor="@color/textDefault"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"/>
@@ -127,7 +138,7 @@
             android:id="@+id/cthd_formpayV"
             android:layout_toEndOf="@id/cthd_formpay"
             android:layout_marginLeft="20dp"
-            android:textSize="22sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textColor="@color/textDefault"/>
     </RelativeLayout>
 
@@ -138,7 +149,7 @@
         android:text="@string/cthd_hdtd"
         android:id="@+id/cthd_hdtd"
         android:textColor="@color/textDefault"
-        android:textSize="22sp"
+        android:textSize="@dimen/fontSizeDefault"
         android:layout_weight="0.15"
         android:textAlignment="gravity"
         android:textStyle="bold"
@@ -159,7 +170,7 @@
             android:text="@string/cthd_time"
             android:id="@+id/cthd_time"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"/>
@@ -168,11 +179,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_timeV"
-            android:id="@+id/cthd_timeV"
+            android:id="@+id/cthd_interval"
             android:layout_toEndOf="@id/cthd_time"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"/>
     </RelativeLayout>
@@ -190,7 +200,7 @@
             android:text="@string/cthd_fi"
             android:id="@+id/cthd_fi"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"/>
@@ -199,11 +209,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_fiV"
-            android:id="@+id/cthd_fiV"
+            android:id="@+id/cthd_csdk"
             android:layout_toEndOf="@id/cthd_fi"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"/>
     </RelativeLayout>
@@ -221,7 +230,7 @@
             android:text="@string/cthd_di"
             android:id="@+id/cthd_di"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="15dp"/>
@@ -230,11 +239,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_diV"
-            android:id="@+id/cthd_diV"
+            android:id="@+id/cthd_csck"
             android:layout_toEndOf="@id/cthd_di"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"/>
     </RelativeLayout>
@@ -244,10 +252,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/cthd_money_label"
         android:id="@+id/cthd_moneyTlt_label"
-        android:layout_weight="0.15"
+        android:layout_weight="0.1"
         android:textAlignment="gravity"
         android:textColor="@color/textDefault"
-        android:textSize="24sp"
+        android:textSize="@dimen/fontSizeDefault"
         android:textStyle="bold"
         android:gravity="center_vertical"
         android:paddingLeft="80dp"
@@ -263,10 +271,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_moneyV"
-            android:id="@+id/cthd_moneyV"
+            android:id="@+id/cthd_money"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:paddingLeft="80dp" />
 
@@ -276,9 +283,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/cthd_moneyCur"
             android:id="@+id/cthd_moneyCur"
-            android:layout_toEndOf="@id/cthd_moneyV"
+            android:layout_toEndOf="@id/cthd_money"
             android:textColor="@color/textDefault"
-            android:textSize="24sp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"/>
     </RelativeLayout>
@@ -294,6 +301,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/cthd_signKH"
             android:textColor="@color/textDefault"
+            android:textSize="@dimen/fontSizeDefault"
             android:id="@+id/cthd_signKH" />
 
         <TextView
@@ -301,6 +309,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/cthd_signTT"
+            android:textSize="@dimen/fontSizeDefault"
             android:id="@+id/cthd_signTT"
             android:textColor="@color/textDefault"
             android:layout_alignParentRight="true" />

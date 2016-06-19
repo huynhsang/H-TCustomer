@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="billType_prompt">Choose a bill type</string>
+    <string-array name="billType_arrays">
+        <item>Điện</item>
+        <item>Nước</item>
+        <item>Viễn thông</item>
+    </string-array>
+</resources>

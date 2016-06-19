@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerMainView"
+        android:padding="5dp"
+        android:background="@color/colorTextHint">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:text="@string/icon_arrow_left"
+            android:textColor="@color/textDefault"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/btnToBack"
+            android:clickable="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeTitleMain"
+            android:textColor="@color/textDefault"
+            android:text="@string/lblChargesDetail"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/titleMainView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:textColor="@color/textDefault"
+            android:text="@string/icon_search"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btnToSearch"
+            android:clickable="true"/>
+    </RelativeLayout>
+    <View
+        android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:background="#000"
+        android:layout_below="@+id/headerMainView"
+        android:id="@+id/headerBorder"/>
+    <ScrollView
+        android:layout_below="@+id/headerBorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_chargesDetail">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorWhite"
+                android:padding="5dp"
+                android:layout_marginBottom="8dp">
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/fontSizeDefault"
+                    android:text="@string/ex_name"
+                    android:textStyle="bold"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/fontSizeDefault"
+                    android:text="@string/ex_cardID"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/fontSizeDefault"
+                    android:text="@string/ex_address"
+                    android:padding="5dp"/>
+                
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kỳ 1 - 11/2014"
+                    android:textSize="@dimen/fontSizeDefault"
+                    android:padding="5dp"
+                    android:id="@+id/period_label"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:layout_below="@+id/period_label"
+                    android:id="@+id/content_charges"
+                    android:baselineAligned="false">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_circle"
+                            android:text="123 KWh"
+                            android:gravity="center_vertical|center_horizontal"/>
+                        
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/colorGreenV1"
+                            android:textColor="@color/colorWhite"
+                            android:text="12.345đ"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingLeft="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblCSDK"
+                                android:textSize="@dimen/fontSizeDefault"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblCSDK"
+                                android:textSize="@dimen/fontSizeDefault"
+                                android:textColor="@color/colorGreenV1"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblCSCK"
+                                android:textSize="@dimen/fontSizeDefault"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblCSCK"
+                                android:textSize="@dimen/fontSizeDefault"
+                                android:textColor="@color/colorGreenV1"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblPeriod"
+                                android:textSize="@dimen/fontSizeDefault"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblPeriod"
+                                android:textSize="@dimen/fontSizeDefault"
+                                android:textColor="@color/colorGreenV1"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblSL"
+                                android:textSize="@dimen/fontSizeDefault"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblSL"
+                                android:textSize="@dimen/fontSizeDefault"
+                                android:textColor="@color/colorGreenV1"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblSoTien"
+                                android:textSize="@dimen/fontSizeDefault"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="3"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblSoTien"
+                                android:textSize="@dimen/fontSizeDefault"
+                                android:textColor="@color/colorGreenV1"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right"
+                    android:layout_below="@+id/content_charges"
+                    android:id="@+id/toSeeChart">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lblToSeeChart"
+                        android:textSize="@dimen/fontSizeDefault"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:layout_marginRight="5dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/icon_bar_chart"
+                        android:id="@+id/btnToSeeChart"
+                        android:textSize="@dimen/fontSizeNormal"
+                        android:clickable="true"/>
+
+                </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/toSeeChart"
+                    android:text="@string/lblPeriodEM"
+                    android:padding="8dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/btn_radius"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

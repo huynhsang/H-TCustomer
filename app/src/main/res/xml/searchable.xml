@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="@string/lblSearch"
+    android:hint="@string/lblSearch"
+    android:searchMode="queryRewriteFromText"
+    android:searchButtonText="@string/icon_search"
+    android:includeInGlobalSearch="true"
+    android:queryAfterZeroResults="true"
+    android:searchSettingsDescription="@string/lblSearch">
+</searchable>

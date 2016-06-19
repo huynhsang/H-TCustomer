@@ -4,11 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".views.activity.PHSSActivity"
     android:orientation="vertical"
     android:weightSum="1">
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -45,7 +44,7 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/phss_btntoPhanHoi"
         android:clickable="true"/>
-    </RelativeLayout>
+    </RelativeLayout>-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +58,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/phss_title1"
-            android:textSize="24dp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textColor="@color/textDefault"
             android:id="@+id/phss_label1"
             android:layout_centerVertical="true"
@@ -71,12 +70,13 @@
             android:id="@+id/phss_edt1"
 
             android:text="@string/phss_edt1"
-            android:textSize="24dp"
+            android:textSize="@dimen/fontSizeDefault"
             android:textColor="@color/textDefault"
             android:layout_toEndOf="@+id/phss_label1"
             android:background="@drawable/border_edt1"
             android:layout_centerVertical="true"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:inputType="text"/>
     </RelativeLayout>
 
     <TextView
@@ -85,26 +85,27 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/phss_title2"
         android:textColor="@color/textDefault"
-        android:textSize="24dp"
-        android:layout_marginTop="40dp"
+        android:textSize="@dimen/fontSizeDefault"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="8dp"
          />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:id="@+id/phss_edt2"
-        android:layout_weight="0.5"
         android:background="@drawable/border_edt1"
         android:text="@string/phss_edt2"
-        android:textSize="24sp"
+        android:textSize="@dimen/fontSizeDefault"
         android:textColor="@color/textDefault"
         android:gravity="top|left"
         android:textAlignment="gravity"
-        android:padding="5dp"
+        android:padding="10dp"
         android:textStyle="bold"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:inputType="text"/>
 
 </LinearLayout>

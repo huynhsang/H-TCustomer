@@ -1,7 +1,9 @@
 package com.vnpt.hddtcustomer.models.bill;
 
 
-public class Bill {
+import java.io.Serializable;
+
+public class Bill implements Serializable {
     private String _period, _csdk, _csck, _status, _type;
     private int _money, _sl;
 

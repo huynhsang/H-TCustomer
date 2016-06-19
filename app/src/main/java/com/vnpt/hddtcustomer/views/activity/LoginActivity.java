@@ -82,7 +82,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
                 loginPresenter.validateCredentials(ETUsername.getText().toString(), ETPassword.getText().toString());
                 break;
             case R.id.TVForgetPW:
-
+                Intent toForgetPW = new Intent(LoginActivity.this, ForgotPassActivity.class);
+                startActivity(toForgetPW);
+                finish();
                 break;
         }
     }
