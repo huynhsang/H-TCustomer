@@ -30,7 +30,7 @@ public class CTHDActivity extends AppCompatActivity implements View.OnClickListe
         btnToMoreDetail.setOnClickListener(this);
         btnToback.setOnClickListener(this);
         titleMainView=(TextView) findViewById(R.id.cthd_titleMainView);
-        titleMainView.setText("Chi tiết");
+        titleMainView.setText(R.string.lblBillDetail);
 
         cthd_status = (TextView) findViewById(R.id.cthd_status);
         cthd_interval = (TextView) findViewById(R.id.cthd_interval);

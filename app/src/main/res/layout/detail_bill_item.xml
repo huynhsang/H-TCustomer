@@ -1,161 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="10dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/period_head"
-        android:paddingTop="10dp">
-        <TextView
-            android:id="@+id/period_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:text="@string/lblPeriod" />
-        <TextView
-            android:id="@+id/periodBill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/fontSizeDefault"
-            android:text="1/1/2011" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_below="@+id/period_head"
-        android:layout_marginLeft="20dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="@dimen/paddingBillItem"
+        android:paddingTop="@dimen/paddingBillItem"
+        android:background="@drawable/bill_item_bg"
+        android:layout_weight="10"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
+            <!--date-->
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/colorLightBlue"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/monthBill"
+                    android:text="10"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/fontSizeBillLarge"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/yearBill"
+                    android:text="2014"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/fontSizeBillLarge"
+                    android:layout_below="@+id/monthBill"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tvIcon_clock"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:textSize=   "@dimen/fontSizeDefault"
-                android:text="@string/icon_clock"
-                android:textColor="@color/colorGreen"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/csdk_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/fontSizeDefault"
-                android:text="@string/lblCSDK"/>
-            <TextView
-                android:id="@+id/csdkBill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:textSize="@dimen/fontSizeDefault"
-                android:textColor="@color/colorGreen"
-                android:text="11C54"/>
-
-            <TextView
-                android:id="@+id/csck_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/fontSizeDefault"
-                android:text="@string/lblCSCK"/>
-            <TextView
-                android:id="@+id/csckBill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:textSize="@dimen/fontSizeDefault"
-                android:textColor="@color/colorGreen"
-                android:text="11519"/>
-
-            <TextView
-                android:id="@+id/sl_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/fontSizeDefault"
-                android:text="@string/lblSL"/>
-            <TextView
-                android:id="@+id/slBill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:textSize="@dimen/fontSizeDefault"
-                android:textColor="@color/colorGreen"
-                android:text="465kWh"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvIcon_dollar"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSizeDefault"
-                android:text="@string/icon_dollar"
-                android:textColor="@color/colorGreen"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/sotien_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/fontSizeDefault"
-                android:text="@string/lblSoTien"/>
-            <TextView
-                android:id="@+id/moneyBill"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:textSize="@dimen/fontSizeDefault"
-                android:textColor="@color/colorGreen"
-                android:text="500,000$"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvIcon_check_circle"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSizeDefault"
-                android:text="@string/icon_check_circle"
-                android:textColor="@color/colorGreen"
-                android:gravity="center"
-                />
-
-            <TextView
+            <!--Số tiền + Đã thanh toán-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSizeDefault"
-                android:text="Đã thanh toán"
-                android:textColor="@color/colorGreen"
-                android:id="@+id/statusBill"/>
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <!--Số tiền-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/moneyBill"
+                        android:text="500.000VND"
+                        android:textColor="@color/colorCyan"
+                        android:textSize="@dimen/fontSizeBillVeryLarge"/>
+                </LinearLayout>
+
+                <!--Đã thanh toán-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                        app:font="@string/font_fontawesome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/fontSizeDefault"
+                        android:text="@string/icon_check_circle"
+                        android:textColor="@color/colorCyan"/>
+                    <TextView
+                        android:id="@+id/statusBill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/fontSizeDefault"
+                        android:text="Đã thanh toán"
+                        android:textColor="@color/colorCyan"
+                        android:layout_marginLeft="7dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
+
+        <!--Info-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--CSDK-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorGray"
+                        android:textSize="@dimen/fontSizeBillSmall"
+                        android:text="@string/lblCSDK"/>
+                    <TextView
+                        android:id="@+id/csdkBill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="@dimen/fontSizeBillNormal"
+                        android:textColor="@color/colorBlack"
+                        android:text="11C54"/>
+                </LinearLayout>
+                <!--CSCK-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorGray"
+                        android:textSize="@dimen/fontSizeBillSmall"
+                        android:text="@string/lblCSCK"/>
+                    <TextView
+                        android:id="@+id/csckBill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="@dimen/fontSizeBillNormal"
+                        android:textColor="@color/colorBlack"
+                        android:text="11519"/>
+                </LinearLayout>
+                <!--Sản lượng-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorGray"
+                        android:textSize="@dimen/fontSizeBillSmall"
+                        android:text="@string/lblSL"/>
+                    <TextView
+                        android:id="@+id/slBill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:textSize="@dimen/fontSizeBillNormal"
+                        android:textColor="@color/colorBlack"
+                        android:text="465kWh"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
+    <!--Icon right arrow-->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/navigator">
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeDefault"
+            android:text="@string/icon_arrow_right"
+            android:textColor="@color/colorWhite"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
 </LinearLayout>
+

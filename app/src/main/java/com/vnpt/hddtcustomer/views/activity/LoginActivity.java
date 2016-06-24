@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.vnpt.hddtcustomer.R;
@@ -84,7 +85,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
             case R.id.TVForgetPW:
                 Intent toForgetPW = new Intent(LoginActivity.this, ForgotPassActivity.class);
                 startActivity(toForgetPW);
-                finish();
                 break;
         }
     }

@@ -1,64 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
     android:orientation="vertical"
-    tools:context=".views.activity.CTHDActivity"
-    android:weightSum="1">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--Main content-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:background="@color/colorTextHint">
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/colorLightBlue">
 
-        <TextView
+        <!--Left arrow-->
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeNormal"
             android:text="@string/icon_arrow_left"
-            android:textColor="@color/textDefault"
+            android:textColor="@color/colorWhite"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:id="@+id/cthd_btntoBack"
             android:clickable="true"
             />
-        <TextView
+
+        <!--Title-->
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/VNFGotham"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeTitleMain"
-            android:textColor="@color/textDefault"
+            android:textColor="@color/colorWhite"
             android:text="@string/lblBillDetail"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:id="@+id/cthd_titleMainView"/>
+            android:id="@+id/cthd_titleMainView"
+            android:layout_below="@+id/cthd_btntoBack"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontSizeNormal"
-            android:textColor="@color/textDefault"
-            android:text="@string/icon_file_text"
-            android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/cthd_btntoRefresh"
-            android:layout_marginRight="5dp"
-            android:id="@+id/cthd_btntoMoreDetail"
-            android:clickable="true"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontSizeNormal"
-            android:textColor="@color/textDefault"
-            android:text="@string/icon_refresh"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/cthd_btntoRefresh"
-            android:clickable="true"/>
 
     </RelativeLayout>
+
+    <!--Navigator-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/navigator">
+
+        <!--Bill Detail-->
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
+            style="@style/menuIcon"
+            android:text="@string/icon_file_text"
+            android:id="@+id/cthd_btntoMoreDetail"/>
+
+        <!--Refresh-->
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
+            style="@style/menuIcon"
+            android:text="@string/icon_refresh"
+            android:id="@+id/cthd_btntoRefresh"/>
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -315,4 +323,5 @@
             android:layout_alignParentRight="true" />
 
     </RelativeLayout>
+
 </LinearLayout>

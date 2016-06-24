@@ -3,11 +3,22 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="EdiTxt_left_padding">20dp</dimen>
+    <dimen name="paddingBillItem">10dp</dimen>
+    <dimen name="radius">3dp</dimen>
+
     <dimen name="paddingSizeDefault">10dp</dimen>
+    <dimen name="menuIconPadding">5dp</dimen>
 
     <dimen name="fontSizeDefault">16sp</dimen>
+    <dimen name="fontSizeSmall">14sp</dimen>
     <dimen name="fontSizeTitleMain">20sp</dimen>
     <dimen name="fontSizeNormal">24sp</dimen>
     <dimen name="fontSizeLblView">36sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="fontSizeBillSmall">13sp</dimen>
+    <dimen name="fontSizeBillNormal">15sp</dimen>
+    <dimen name="fontSizeBillLarge">18sp</dimen>
+    <dimen name="fontSizeBillVeryLarge">22sp</dimen>
 </resources>

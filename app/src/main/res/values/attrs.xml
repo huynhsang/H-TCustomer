@@ -6,4 +6,8 @@
         <item>Nước</item>
         <item>Viễn thông</item>
     </string-array>
+    <declare-styleable name="CustomFontApp">
+        <attr name="font" format="string"/>
+        <attr name="textStyle" format="integer"/>
+    </declare-styleable>
 </resources>

@@ -1,53 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--Main content-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/headerMainView"
-        android:padding="5dp"
-        android:background="@color/colorTextHint">
-
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/mainContent">
+        <!--Header-->
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/fontSizeNormal"
-            android:text="@string/icon_arrow_left"
-            android:textColor="@color/textDefault"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/btnToBack"
-            android:clickable="true"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontSizeTitleMain"
-            android:textColor="@color/textDefault"
-            android:text="@string/lblBillContent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/titleMainView"/>
+            android:id="@+id/headerMainView"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/colorLightBlue">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontSizeNormal"
-            android:textColor="@color/textDefault"
-            android:text="@string/icon_share"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/btnToShare"
-            android:clickable="true"/>
+            <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                app:font="@string/font_fontawesome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontSizeNormal"
+                android:text="@string/icon_arrow_left"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/btnToBack"
+                android:clickable="true"
+                />
 
+            <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                app:font="@string/VNFGotham"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontSizeTitleMain"
+                android:textColor="@color/colorWhite"
+                android:text="@string/lblBillContent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/titleMainView"/>
+
+        </RelativeLayout>
+
+        <!--Navigator-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/headerMainView"
+            android:id="@+id/navigator"
+            android:background="#CCD3D9">
+
+            <!--Share-->
+            <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                app:font="@string/font_fontawesome"
+                style="@style/menuIcon"
+                android:text="@string/icon_share"
+                android:id="@+id/btnToShare"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragMainContent"
+            android:layout_below="@+id/navigator"/>
     </RelativeLayout>
-    <View
-        android:layout_height="1px"
-        android:layout_width="match_parent"
-        android:background="#000"
-        android:layout_below="@+id/headerMainView"
-        android:id="@+id/headerBorder"/>
 
     <ImageView
         android:layout_width="match_parent"

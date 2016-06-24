@@ -44,15 +44,7 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Typeface fontAwesome = Typeface.createFromAsset(_context.getAssets(),"fonts/fontawesome-webfont.ttf");
-        TextView tvIcon_clock = (TextView) convertView.findViewById(R.id.tvIcon_clock);
-        TextView tvIcon_dollar = (TextView) convertView.findViewById(R.id.tvIcon_dollar);
-        TextView tvIcon_check_circle = (TextView) convertView.findViewById(R.id.tvIcon_check_circle);
-        tvIcon_clock.setTypeface(fontAwesome);
-        tvIcon_dollar.setTypeface(fontAwesome);
-        tvIcon_check_circle.setTypeface(fontAwesome);
-
-        holder.setTextView(bill.get_period(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_money(), bill.get_status());
+        holder.setTextView(bill.get_month(), bill.get_year(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_money(), bill.get_status());
         return convertView;
     }
 
@@ -72,10 +64,11 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
     }
 
     private class ViewHolder{
-        private TextView tvPeriod, tvCSDK, tvCSCK, tvSL, tvMoney, tvStatus;
+        private TextView tvMonth, tvYear, tvCSDK, tvCSCK, tvSL, tvMoney, tvStatus;
 
         public ViewHolder(View v){
-            tvPeriod = (TextView) v.findViewById(R.id.periodBill);
+            tvMonth = (TextView) v.findViewById(R.id.monthBill);
+            tvYear = (TextView) v.findViewById(R.id.yearBill);
             tvCSDK = (TextView) v.findViewById(R.id.csdkBill);
             tvCSCK = (TextView) v.findViewById(R.id.csckBill);
             tvSL = (TextView) v.findViewById(R.id.slBill);
@@ -83,11 +76,12 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             tvStatus = (TextView) v.findViewById(R.id.statusBill);
         }
 
-        public void setTextView(String periodBill, String csdkBill, String csckBill, int slBill, int moneyBill, String statusBill ){
-            tvPeriod.setText(periodBill);
+        public void setTextView(int monthBill, int yearBill, String csdkBill, String csckBill, int slBill, int moneyBill, String statusBill ){
+            tvMonth.setText(""+monthBill);
+            tvYear.setText(""+yearBill);
             tvCSDK.setText(csdkBill);
             tvCSCK.setText(csckBill);
-            tvSL.setText(slBill + " KWh");
+            tvSL.setText(slBill + " kWh");
             tvMoney.setText(moneyBill + " d");
             tvStatus.setText(statusBill);
         }

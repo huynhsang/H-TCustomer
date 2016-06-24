@@ -6,14 +6,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/headerMainView"
         android:padding="5dp"
-        android:background="@color/colorTextHint">
+        android:background="@color/colorLightBlue">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeNormal"
             android:text="@string/icon_arrow_left"
-            android:textColor="@color/textDefault"
+            android:textColor="@drawable/text_clickable_color"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:id="@+id/btnToBack"
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeTitleMain"
-            android:textColor="@color/textDefault"
+            android:textColor="@color/colorWhite"
             android:text="@string/lblChargesDetail"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeNormal"
-            android:textColor="@color/textDefault"
+            android:textColor="@drawable/text_clickable_color"
             android:text="@string/icon_search"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -71,6 +71,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/fontSizeDefault"
                     android:text="@string/ex_name"
+                    android:textColor="@color/colorLightBlue"
                     android:textStyle="bold"
                     android:padding="5dp"/>
                 <TextView
@@ -100,7 +101,9 @@
                     android:text="Kỳ 1 - 11/2014"
                     android:textSize="@dimen/fontSizeDefault"
                     android:padding="5dp"
-                    android:id="@+id/period_label"/>
+                    android:id="@+id/period_label"
+                    android:textColor="@color/colorLightBlue"
+                    android:textStyle="bold"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,19 +118,36 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:background="@drawable/border_circle"
-                            android:text="123 KWh"
-                            android:gravity="center_vertical|center_horizontal"/>
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:textAlignment="gravity"
+                            android:layout_gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="123"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorCyan"
+                                android:textSize="20dp"
+                                android:textAlignment="center" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="kWh"
+                                android:textColor="@color/colorGray"
+                                android:textAlignment="center" />
+                        </LinearLayout>
                         
                         <Button
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
                             android:layout_marginTop="20dp"
-                            android:background="@color/colorGreenV1"
+                            android:background="@color/colorCyan"
                             android:textColor="@color/colorWhite"
                             android:text="12.345đ"/>
 
@@ -146,18 +166,19 @@
                             android:padding="5dp">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="2"
+                                android:layout_weight="@integer/attr_weight"
+                                android:layout_height="wrap_content"
+                                android:text="Chỉ số đầu kỳ:"
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorBlack"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="@integer/val_weight"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lblCSDK"
-                                android:textSize="@dimen/fontSizeDefault"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="3"
-                                android:layout_height="wrap_content"
-                                android:text="@string/lblCSDK"
-                                android:textSize="@dimen/fontSizeDefault"
-                                android:textColor="@color/colorGreenV1"/>
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorGray"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -166,18 +187,19 @@
                             android:padding="5dp">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="2"
+                                android:layout_weight="@integer/attr_weight"
+                                android:layout_height="wrap_content"
+                                android:text="Chỉ số cuối kỳ:"
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorBlack"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="@integer/val_weight"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lblCSCK"
-                                android:textSize="@dimen/fontSizeDefault"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="3"
-                                android:layout_height="wrap_content"
-                                android:text="@string/lblCSCK"
-                                android:textSize="@dimen/fontSizeDefault"
-                                android:textColor="@color/colorGreenV1"/>
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorGray"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -186,18 +208,19 @@
                             android:padding="5dp">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="2"
+                                android:layout_weight="@integer/attr_weight"
+                                android:layout_height="wrap_content"
+                                android:text="Ngày ghi chỉ số:"
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorBlack"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="@integer/val_weight"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lblPeriod"
-                                android:textSize="@dimen/fontSizeDefault"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="3"
-                                android:layout_height="wrap_content"
-                                android:text="@string/lblPeriod"
-                                android:textSize="@dimen/fontSizeDefault"
-                                android:textColor="@color/colorGreenV1"/>
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorGray"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -206,18 +229,40 @@
                             android:padding="5dp">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="2"
+                                android:layout_weight="@integer/attr_weight"
                                 android:layout_height="wrap_content"
-                                android:text="@string/lblSL"
-                                android:textSize="@dimen/fontSizeDefault"/>
+                                android:text="Ngày thu tiền:"
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorBlack"/>
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="@integer/val_weight"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lblSL"
-                                android:textSize="@dimen/fontSizeDefault"
-                                android:textColor="@color/colorGreenV1"/>
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorGray"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="@integer/attr_weight"
+                                android:layout_height="wrap_content"
+                                android:text="Sản lượng:"
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorBlack"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="@integer/val_weight"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lblSL"
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorGray"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -227,18 +272,19 @@
                             android:padding="5dp">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="2"
+                                android:layout_weight="@integer/attr_weight"
                                 android:layout_height="wrap_content"
-                                android:text="@string/lblSoTien"
-                                android:textSize="@dimen/fontSizeDefault"/>
+                                android:text="Tổng tiền:"
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorBlack"/>
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="@integer/val_weight"
                                 android:layout_height="wrap_content"
                                 android:text="@string/lblSoTien"
-                                android:textSize="@dimen/fontSizeDefault"
-                                android:textColor="@color/colorGreenV1"/>
+                                android:textSize="@dimen/fontSizeSmall"
+                                android:textColor="@color/colorGray"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -256,7 +302,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/lblToSeeChart"
                         android:textSize="@dimen/fontSizeDefault"
-                        android:textColor="@android:color/holo_orange_dark"
+                        android:textColor="@color/colorCyan"
                         android:layout_marginRight="5dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -272,10 +318,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/toSeeChart"
                     android:text="@string/lblPeriodEM"
+                    android:textColor="@color/colorWhite"
                     android:padding="8dp"
+                    android:layout_marginTop="10dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/btn_radius"/>
+                    android:background="@drawable/btn_radius_blue"/>
             </RelativeLayout>
         </LinearLayout>
 

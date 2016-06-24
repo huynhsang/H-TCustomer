@@ -13,8 +13,21 @@
     <style name="InputDefault">
         <item name="android:textColor">@color/textDefault</item>
         <item name="android:textColorHint">@color/colorTextHint</item>
-        <item name="android:padding">@dimen/paddingSizeDefault</item>
-        <item name="android:textSize">@dimen/fontSizeDefault</item>
+        <item name="android:paddingLeft">@dimen/EdiTxt_left_padding</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="menuIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">@dimen/menuIconPadding</item>
+        <item name="android:textSize">@dimen/fontSizeNormal</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/navigator</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

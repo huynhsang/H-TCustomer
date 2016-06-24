@@ -150,15 +150,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 3:
                 fragmentClass = ContactFragment.class;
-                titleMainView.setText("Phản hồi sai sót");
+                titleMainView.setText("PHẢN HỒI SAI SÓT");
                 break;
             case 4:
                 fragmentClass = ConfigFragment.class;
-                titleMainView.setText("Cấu hình");
+                titleMainView.setText("CẤU HÌNH");
                 break;
             case 5:
                 fragmentClass = GuideFragment.class;
-                titleMainView.setText("Hướng dẫn sử dụng");
+                titleMainView.setText("HƯỚNG DẪN SỬ DỤNG");
                 break;
             case 6:
                 toLogout();

@@ -6,13 +6,13 @@
             <item android:top="2dp">
                 <shape android:shape="rectangle"  >
                     <corners android:radius="@dimen/radius" />
-                    <solid android:color="@color/btn_shadow"/>
+                    <solid android:color="@color/btn_blue_shadow"/>
                 </shape>
             </item>
             <item android:bottom="2dp">
                 <shape android:shape="rectangle"  >
                     <corners android:radius="@dimen/radius" />
-                    <solid android:color="@color/btn_pressed"/>
+                    <solid android:color="@color/btn_blue_pressed"/>
                 </shape>
             </item>
         </layer-list>
@@ -23,13 +23,13 @@
             <item android:top="3dp">
                 <shape android:shape="rectangle"  >
                     <corners android:radius="@dimen/radius" />
-                    <solid android:color="@color/btn_shadow"/>
+                    <solid android:color="@color/btn_blue_shadow"/>
                 </shape>
             </item>
             <item android:bottom="3dp">
                 <shape android:shape="rectangle"  >
                     <corners android:radius="@dimen/radius" />
-                    <solid android:color="@color/btn_focused"/>
+                    <solid android:color="@color/btn_blue_focused"/>
                 </shape>
             </item>
         </layer-list>
@@ -40,13 +40,13 @@
             <item android:top="3dp">
                 <shape android:shape="rectangle"  >
                     <corners android:radius="@dimen/radius" />
-                    <solid android:color="@color/btn_shadow"/>
+                    <solid android:color="@color/btn_blue_shadow"/>
                 </shape>
             </item>
             <item android:bottom="3dp">
                 <shape android:shape="rectangle"  >
                     <corners android:radius="@dimen/radius" />
-                    <solid android:color="@color/btn_default"/>
+                    <solid android:color="@color/btn_blue_default"/>
                 </shape>
             </item>
         </layer-list>

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">HDDTCustomer</string>
 
-    <string name="welcome">Hóa đơn điện tử</string>
+    <string name="welcome">HÓA ĐƠN ĐIỆN TỬ</string>
 
     <!--login view-->
-    <string name="lblLoginView">Đăng nhập HĐĐT</string>
+    <string name="lblLoginView">HÓA ĐƠN ĐIỆN TỬ</string>
     <string name="lblUsername">Tên đăng nhập:</string>
     <string name="lblPassword">Mật khẩu:</string>
     <string name="lblForgetPW"><u>Quên mật khẩu</u></string>
@@ -13,7 +13,7 @@
     <string name="hintPassword">******</string>
 
     <!--forgotPW view-->
-    <string name="forgotPassTitle">Quên Mật Khẩu</string>
+    <string name="forgotPassTitle">Quên mật khẩu</string>
     <string name="forgotPassGuide">Nhập số điện thoại để phục hồi mật khẩu:</string>
     <string name="forgotPassHint">Số điện thoại</string>
     <string name="forgotPassBtn">Gửi</string>
@@ -22,13 +22,13 @@
     <string name="password_error">Your password invalid</string>
 
     <!--home-->
-    <string name="lblHome">Trang Chủ</string>
-    <string name="lblBill">Danh Sách Hóa Đơn</string>
+    <string name="lblHome">TRANG CHỦ</string>
+    <string name="lblBill">DANH SÁCH HÓA ĐƠN</string>
 
     <string name="lblSearch">Search...</string>
 
     <!--lookup-->
-    <string name="lblBillLookup">Tra cứu hóa đơn</string>
+    <string name="lblBillLookup">TRA CỨU HÓA ĐƠN</string>
     <string name="lblBillNumber">Số hóa đơn</string>
     <string name="lblBillType">Loại hóa đơn</string>
     <string name="lblBillTime">Thời gian</string>
@@ -38,7 +38,7 @@
     <string name="lblConfig_mes">Thông báo khi có HD mới</string>
 
     <!--Bill detail-->
-    <string name="lblBillDetail">Chi tiết</string>
+    <string name="lblBillDetail">CHI TIẾT</string>
     <string name="title_activity_cthd">CTHDActivity</string>
     <string name="cthd_sts">Trạng thái:</string>
     <string name="cthd_timepay">T/g thanh toán:</string>
@@ -56,7 +56,7 @@
     <string name="cthd_hdtd">Hóa đơn tiền điện</string>
 
     <!--Bill content-->
-    <string name="lblBillContent">Nội dung hóa đơn</string>
+    <string name="lblBillContent">NỘI DUNG HÓA ĐƠN</string>
     <string name="descrip_bill_image">Bill Content</string>
 
     <string name="phss_title1">Tiêu đề:</string>
@@ -65,14 +65,14 @@
     <string name="phss_edt2">Sai địa chỉ công ty, \nCần cố gắng nhiều hơn</string>
 
     <!--list bill-->
-    <string name="lblPeriod">Kỳ hóa đơn: </string>
-    <string name="lblCSDK">CSĐK: </string>
-    <string name="lblCSCK">CSCK: </string>
-    <string name="lblSL">SL: </string>
-    <string name="lblSoTien">Số tiền: </string>
+    <string name="lblPeriod">Kỳ hóa đơn</string>
+    <string name="lblCSDK">Chỉ số đầu kỳ</string>
+    <string name="lblCSCK">Chỉ số cuối kỳ</string>
+    <string name="lblSL">Sản lượng</string>
+    <string name="lblSoTien">Số tiền</string>
 
     <!--chart-->
-    <string name="lblChart">Biểu đồ sử dụng</string>
+    <string name="lblChart">BIỂU ĐỒ SỬ DỤNG</string>
 
     <!--guide view-->
     <string name="guideTitle">Hướng Dẫn Sử Dụng</string>
@@ -81,7 +81,7 @@
     <!--notification-->
     <string name="lblNotify">Thông báo cước</string>
     <!--charges detail-->
-    <string name="lblChargesDetail">Chi tiết cước</string>
+    <string name="lblChargesDetail">CHI TIẾT CƯỚC</string>
     <string name="lblToSeeChart">Xem biểu đồ</string>
     <string name="lblPeriodEM">Tiền điện kỳ trước</string>
     <string name="ex_name">Huỳnh Thanh Sang</string>
@@ -95,6 +95,7 @@
     <string name="icon_chevron_left">&#xf053; " Back "</string>
     <string name="icon_menu">&#xf0c9; ""</string>
     <string name="icon_arrow_left">&#xf060; ""</string>
+    <string name="icon_arrow_right">&#xf061; ""</string>
     <string name="icon_right">&#xf022; ""</string>
     <string name="icon_check">&#xf00c; ""</string>
     <string name="icon_circle">&#xf10c; ""</string>
@@ -111,5 +112,9 @@
     <string name="icon_clock">&#xf017; ""</string>
     <string name="icon_dollar">&#xf155; ""</string>
     <string name="icon_check_circle">&#xf046;""</string>
+
+    <!--font name-->
+    <string name="VNFGotham">VNFGothamBook</string>
+    <string name="font_fontawesome">font_fontawesome</string>
 
 </resources>

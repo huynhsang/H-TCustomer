@@ -29,11 +29,11 @@ public class ForgotPassActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        if (v == btnForgotPassToLeft)
-        {
-            Intent toLogin = new Intent(ForgotPassActivity.this, LoginActivity.class);
-            startActivity(toLogin);
-            finish();
+        int id = v.getId();
+        switch (id){
+            case R.id.btnForgotPassToLeft:
+                onBackPressed();
+                break;
         }
     }
 }

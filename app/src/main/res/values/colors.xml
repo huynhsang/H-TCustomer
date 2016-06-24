@@ -4,8 +4,22 @@
     <color name="colorBlue">#3b5998</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGreen">#208a00</color>
-    <color name="colorTextHint">#c6bebe</color>
+    <color name="colorTextHint">#7D9D9E</color>
     <color name="colorGreenV1">#64d81e</color>
+
+    <color name="colorLightBlue">#46AED5</color>
+    <color name="colorCyan">#39A47A</color>
+    <color name="colorGray">#878B8C</color>
+
+    <color name="btn_blue_pressed">#2582a1</color>
+    <color name="btn_blue_default">#31ACD6</color>
+    <color name="btn_blue_focused">#7fc5de</color>
+    <color name="btn_blue_shadow">#1C789D</color>
+
+    <color name="btn_pressed">#56798e</color>
+    <color name="btn_default">#2C2C2C</color>
+    <color name="btn_focused">#5b5b5b</color>
+    <color name="btn_shadow">#1A1A1A</color>
 
     <color name="textDefault">#000000</color>
     <color name="edt_pressed">#99CBFF</color>

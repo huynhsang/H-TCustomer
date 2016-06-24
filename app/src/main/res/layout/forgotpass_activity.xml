@@ -1,70 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hddt_login_bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:id="@+id/headerForgotPass"
-        android:background="@color/colorTextHint">
+        android:id="@+id/headerForgotPass">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeNormal"
             android:text="@string/icon_arrow_left"
-            android:textColor="@color/textDefault"
+            android:textColor="@drawable/text_clickable_color"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/btnForgotPassToLeft"
-            android:clickable="true" />
+            android:id="@+id/btnForgotPassToLeft"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeTitleMain"
-            android:textColor="@color/textDefault"
+            android:textColor="@color/colorWhite"
             android:text="@string/forgotPassTitle"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/btnForgotPassToLeft"
+            android:layout_marginLeft="10dp"
             android:id="@+id/titleForgotPass"/>
     </RelativeLayout>
-
-    <View
-        android:layout_height="1px"
-        android:layout_width="match_parent"
-        android:background="#000000"
-        android:layout_below="@+id/headerForgotPass"
-        android:id="@+id/headerBorderForgotPass"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:layout_below="@id/headerBorderForgotPass">
+        android:layout_below="@id/headerForgotPass">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="@string/forgotPassGuide"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeNormal"
-            android:layout_below="@+id/headerBorderForgotPass"
-            android:layout_marginTop="100dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:layout_marginTop="80dp"
             android:id="@+id/TVForgotPassGuide"/>
         <EditText style="@style/InputDefault"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            android:paddingLeft="@dimen/EdiTxt_left_padding"
             android:hint="@string/forgotPassHint"
-            android:layout_below="@+id/TVForgotPassGuide"
             android:id="@+id/ETForgotPass"
-            android:background="@drawable/border_edt"/>
+            android:layout_below="@+id/TVForgotPassGuide"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_layout"/>
         <Button
-            android:layout_width="180dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_radius"
             android:text="@string/forgotPassBtn"
-            android:textColor="@color/textDefault"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/fontSizeDefault"
             android:layout_below="@id/ETForgotPass"
             android:layout_marginTop="20dp"

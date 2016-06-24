@@ -6,6 +6,7 @@ import java.io.Serializable;
 public class Bill implements Serializable {
     private String _period, _csdk, _csck, _status, _type;
     private int _money, _sl;
+    private final int pos1, pos2;
 
     public Bill(String period, String csdk, String csck, int sl, int money, String status, String type){
         this._period = period;
@@ -15,6 +16,8 @@ public class Bill implements Serializable {
         this._money = money;
         this._status = status;
         this._type = type;
+        pos1 = period.indexOf("-");
+        pos2 = period.indexOf("/") + 1;
     }
 
     public void set_period(String period){
@@ -41,6 +44,13 @@ public class Bill implements Serializable {
 
     public String get_period(){
         return this._period;
+    }
+    public int get_month() {
+        return Integer.parseInt(this.get_period().substring(pos1+1, pos2-1));
+    }
+
+    public int get_year() {
+        return Integer.parseInt(this.get_period().substring(pos2));
     }
     public String get_csdk(){
         return this._csdk;
