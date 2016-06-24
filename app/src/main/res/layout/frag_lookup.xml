@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="7dp">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/lookupForm"
-        android:padding="5dp">
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,6 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="@string/lblBillNumber"
+                android:textColor="@color/colorGray"
                 android:textSize="@dimen/fontSizeDefault"/>
 
             <EditText
@@ -40,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="@string/lblBillType"
+                android:textColor="@color/colorGray"
                 android:textSize="@dimen/fontSizeDefault"/>
 
             <Spinner
@@ -49,6 +50,7 @@
                 android:id="@+id/billTypeSpinner"
                 android:prompt="@string/billType_prompt"
                 android:entries="@array/billType_arrays"
+                android:background="@drawable/border_edt"
                 android:padding="2dp"/>
         </LinearLayout>
 
@@ -62,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="@string/lblBillTime"
+                android:textColor="@color/colorGray"
                 android:textSize="@dimen/fontSizeDefault"/>
 
             <EditText
@@ -79,6 +82,7 @@
                 android:textSize="@dimen/fontSizeDefault"
                 android:gravity="right"
                 android:text="@string/icon_calendar"
+                android:textColor="@color/colorGray"
                 android:id="@+id/btnBillTime"
                 android:clickable="true"/>
         </LinearLayout>
@@ -88,7 +92,9 @@
             android:id="@+id/btnToLookup"
             android:padding="5dp"
             android:text="@string/lblBillSearch"
-            android:layout_gravity="center_horizontal" />
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_radius_blue"/>
     </LinearLayout>
     <View
         android:layout_height="1px"

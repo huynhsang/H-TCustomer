@@ -52,6 +52,8 @@
                 android:textSize="@dimen/fontSizeDefault"
                 android:layout_toEndOf="@+id/btnToLeftMenu"
                 android:layout_toStartOf="@+id/btnToSearch"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
                 android:inputType="text"
                 android:paddingTop="0dp"
                 android:paddingBottom="8dp"
