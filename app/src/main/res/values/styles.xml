@@ -33,5 +33,11 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="TableTheme">
+        <item name="android:textColor">@color/textDefault</item>
+        <item name="android:padding">@dimen/paddingSizeDefault</item>
+        <item name="android:textSize">@dimen/fontSizeDefault</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

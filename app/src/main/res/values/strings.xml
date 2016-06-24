@@ -41,14 +41,23 @@
     <string name="lblBillDetail">CHI TIẾT</string>
     <string name="title_activity_cthd">CTHDActivity</string>
     <string name="cthd_sts">Trạng thái:</string>
+
     <string name="cthd_timepay">T/g thanh toán:</string>
     <string name="cthd_timepayV">8h ngày 02/06/2015</string>
     <string name="cthd_formpay">Hình thức thanh toán:</string>
     <string name="cthd_formpayV" >Tiền mặt</string>
     <string name="cthd_time">Thời gian:</string>
-
     <string name="cthd_fi">Chỉ số đầu:</string>
     <string name="cthd_di">Chỉ số cuối:</string>
+
+    <!-- data change-->
+    <string name="cthd_stsV">Đã thanh toán</string>
+    <string name="cthd_timeV" />
+    <string name="cthd_fiV" />
+    <string name="cthd_diV" />
+    <string name="cthd_moneyV">500.000</string>
+
+
     <string name="cthd_moneyCur">vnd</string>
     <string name="cthd_signKH">Chữ kí của KH</string>
     <string name="cthd_signTT">Chữ kí người thu tiền</string>
@@ -63,6 +72,12 @@
     <string name="phss_edt1">Sai sót HD kỳ 1 -2014</string>
     <string name="phss_title2">Nội dung:</string>
     <string name="phss_edt2">Sai địa chỉ công ty, \nCần cố gắng nhiều hơn</string>
+
+    <!-- change-->
+    <string name="phss_btntoPhanHoi">Gửi phản hồi</string>
+    <string name="phss_toast_label">THÔNG BÁO</string>
+    <string name="phss_toast_content">Cảm ơn bạn đã phản hồi thông\ntin cho chúng tôi, chúng tôi sẽ\nsớm liên lạc với bạn.</string>
+
 
     <!--list bill-->
     <string name="lblPeriod">Kỳ hóa đơn</string>

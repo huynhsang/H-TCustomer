@@ -25,5 +25,6 @@
     <color name="edt_pressed">#99CBFF</color>
     <color name="edt_focused">#CEF7F6</color>
     <color name="edt_default">#000000</color>
+    <color name="table_default">#e0ebec</color>
     <color name="bg_chargesDetail">#e9ebee</color>
 </resources>

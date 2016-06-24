@@ -70,7 +70,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,11 +88,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/cthd_stsV"
             android:id="@+id/cthd_status"
             android:layout_toEndOf="@id/cthd_sts"
             android:layout_marginLeft="22dp"
             android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault" />
+            android:textColor="@color/colorCyan"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -119,7 +121,8 @@
             android:layout_toEndOf="@id/cthd_timepay"
             android:layout_marginLeft="5dp"
             android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault"/>
+            android:textColor="@color/textDefault"
+            android:textStyle="italic"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -147,161 +150,143 @@
             android:layout_toEndOf="@id/cthd_formpay"
             android:layout_marginLeft="20dp"
             android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault"/>
+            android:textColor="#418708"/>
     </RelativeLayout>
 
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="35dp"
         android:text="@string/cthd_hdtd"
         android:id="@+id/cthd_hdtd"
-        android:textColor="@color/textDefault"
-        android:textSize="@dimen/fontSizeDefault"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/fontSizeTitleMain"
         android:layout_weight="0.15"
         android:textAlignment="gravity"
-        android:textStyle="bold"
-        android:gravity="center_vertical"
-        android:paddingLeft="80dp" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border_bottom_default"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_time"
-            android:id="@+id/cthd_time"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="15dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/cthd_interval"
-            android:layout_toEndOf="@id/cthd_time"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border_bottom_default"
-        android:paddingTop="7dp"
-        android:paddingBottom="7dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_fi"
-            android:id="@+id/cthd_fi"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="15dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/cthd_csdk"
-            android:layout_toEndOf="@id/cthd_fi"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border_bottom_default"
-        android:paddingTop="7dp"
-        android:paddingBottom="7dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_di"
-            android:id="@+id/cthd_di"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="15dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/cthd_csck"
-            android:layout_toEndOf="@id/cthd_di"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/cthd_money_label"
-        android:id="@+id/cthd_moneyTlt_label"
-        android:layout_weight="0.1"
-        android:textAlignment="gravity"
-        android:textColor="@color/textDefault"
-        android:textSize="@dimen/fontSizeDefault"
-        android:textStyle="bold"
         android:gravity="center_vertical"
         android:paddingLeft="80dp"
-        android:background="@drawable/border_bottom_default"/>
-    <RelativeLayout
+        android:background="#406FD6"/>
+
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/table_default"
+        >
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cthd_time"
+                android:layout_weight="3"
+                android:theme="@style/TableTheme" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cthd_timeV"
+                android:id="@+id/cthd_interval"
+                android:layout_weight="7"
+                android:theme="@style/TableTheme"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cthd_fi"
+                android:layout_weight="3"
+                android:theme="@style/TableTheme" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cthd_fiV"
+                android:id="@+id/cthd_csdk"
+                android:layout_weight="7"
+                android:theme="@style/TableTheme"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cthd_di"
+                android:layout_weight="3"
+                android:theme="@style/TableTheme" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cthd_fiV"
+                android:id="@+id/cthd_csck"
+                android:layout_weight="7"
+                android:theme="@style/TableTheme"/>
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:background="@drawable/border_bottom_default"
-        android:paddingTop="7dp"
-        android:paddingBottom="7dp">
-
+        android:paddingTop="10dp">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/cthd_money"
+            android:text="@string/cthd_money_label"
+            android:id="@+id/cthd_moneyTlt_label"
+            android:textAlignment="gravity"
             android:textColor="@color/textDefault"
             android:textSize="@dimen/fontSizeDefault"
             android:textStyle="bold"
+            android:gravity="center_vertical"
             android:paddingLeft="80dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_moneyCur"
-            android:id="@+id/cthd_moneyCur"
-            android:layout_toEndOf="@id/cthd_money"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"/>
-    </RelativeLayout>
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_moneyV"
+                android:id="@+id/cthd_money"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textStyle="bold"
+                android:layout_marginLeft="80dp"
+                android:padding="5dp"
+                android:background="#7ABE43"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_moneyCur"
+                android:id="@+id/cthd_moneyCur"
+                android:layout_toEndOf="@id/cthd_money"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:background="#7ABE43"/>
+        </RelativeLayout>
+    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp">
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -317,11 +302,45 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/cthd_signTT"
-            android:textSize="@dimen/fontSizeDefault"
             android:id="@+id/cthd_signTT"
             android:textColor="@color/textDefault"
+            android:textSize="@dimen/fontSizeDefault"
             android:layout_alignParentRight="true" />
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/camera"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/phss_imgCamera" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/record"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/phss_imgCamera"
+            android:layout_marginLeft="15dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/note"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_marginLeft="15dp" />
+    </RelativeLayout>
 </LinearLayout>

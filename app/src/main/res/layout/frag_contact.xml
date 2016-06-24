@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/phss_bg"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -97,7 +97,8 @@
         android:layout_height="200dp"
         android:id="@+id/phss_edt2"
         android:background="@drawable/border_edt1"
-        android:text="@string/phss_edt2"
+        android:hint="@string/phss_edt2"
+        android:textColorHint="@color/colorGray"
         android:textSize="@dimen/fontSizeDefault"
         android:textColor="@color/textDefault"
         android:gravity="top|left"
@@ -107,5 +108,16 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:inputType="textMultiLine"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phss_btntoPhanHoi"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/phss_btntoPhanHoi"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_radius_blue"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="50dp" />
 
 </LinearLayout>
