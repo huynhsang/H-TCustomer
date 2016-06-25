@@ -44,7 +44,7 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.setTextView(bill.get_month(), bill.get_year(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_money(), bill.get_status());
+        holder.setTextView(bill.get_month(), bill.get_year(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_price(), bill.get_status());
         return convertView;
     }
 
@@ -76,14 +76,18 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             tvStatus = (TextView) v.findViewById(R.id.statusBill);
         }
 
-        public void setTextView(int monthBill, int yearBill, String csdkBill, String csckBill, int slBill, int moneyBill, String statusBill ){
-            tvMonth.setText(""+monthBill);
+        public void setTextView(int monthBill, int yearBill, int csdkBill, int csckBill, int slBill, int moneyBill, String statusBill ){
+            tvMonth.setText("T"+monthBill);
             tvYear.setText(""+yearBill);
-            tvCSDK.setText(csdkBill);
-            tvCSCK.setText(csckBill);
+            tvCSDK.setText(csdkBill + "");
+            tvCSCK.setText(csckBill + "");
             tvSL.setText(slBill + " kWh");
             tvMoney.setText(moneyBill + " d");
-            tvStatus.setText(statusBill);
+            if(statusBill.equals("0")){
+                tvStatus.setText(R.string.lblStatus0);
+            }else{
+                tvStatus.setText(R.string.lblStatus1);
+            }
         }
 
     }

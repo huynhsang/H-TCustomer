@@ -64,57 +64,18 @@ public class CTHDActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setDataDetail(){
         Bill bill = (Bill)getIntent().getSerializableExtra("billDetail");
-        DataDetail dataDetail = new DataDetail(bill);
-        cthd_status.setText(dataDetail.get_status());
-        cthd_interval.setText(new StringBuilder().append("01/").append(dataDetail.get_month()).append("/")
-                .append(dataDetail.get_year()).append(" - 30/").append(dataDetail.get_month()).append("/").append(dataDetail.get_year()));
-        cthd_csdk.setText(dataDetail.get_csdk() + "");
-        cthd_csck.setText(dataDetail.get_csck() + "");
-        cthd_money.setText(dataDetail.get_money() + "");
+        /*DataDetail dataDetail = new DataDetail(bill);*/
+        if(bill.get_status().equals("0")){
+            cthd_status.setText(R.string.lblStatus0);
+        }else{
+            cthd_status.setText(R.string.lblStatus1);
+        }
+        //cthd_status.setText(bill.get_status());
+        cthd_interval.setText(new StringBuilder().append("01/").append(bill.get_month()).append("/")
+                .append(bill.get_year()).append(" - 30/").append(bill.get_month()).append("/").append(bill.get_year()));
+        cthd_csdk.setText(bill.get_csdk() + "");
+        cthd_csck.setText(bill.get_csck() + "");
+        cthd_money.setText(bill.get_price() + "");
     }
-
-    private class DataDetail{
-        private int _month, _year, _csdk, _csck, _money;
-        private Bill _bill;
-        private final int pos1, pos2;
-        private String _status;
-
-        public DataDetail(Bill bill){
-            this._bill = bill;
-            pos1 = bill.get_period().indexOf("-");
-            pos2 = bill.get_period().indexOf("/") + 1;
-        }
-
-        public int get_month() {
-            _month = Integer.parseInt(_bill.get_period().substring(pos1+1, pos2-1));
-            return _month;
-        }
-
-        public int get_year() {
-            _year = Integer.parseInt(_bill.get_period().substring(pos2));
-            return _year;
-        }
-
-        public int get_csdk() {
-            _csdk = Integer.parseInt(_bill.get_csdk());
-            return _csdk;
-        }
-
-        public int get_csck() {
-            _csck = Integer.parseInt(_bill.get_csck());
-            return _csck;
-        }
-
-        public int get_money() {
-            _money = _bill.get_money();
-            return _money;
-        }
-
-        public String get_status() {
-            _status = _bill.get_status();
-            return _status;
-        }
-    }
-
 
 }

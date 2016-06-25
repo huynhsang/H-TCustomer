@@ -21,7 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vnpt.hddtcustomer.R;
+import com.vnpt.hddtcustomer.database.TbInvoice;
 import com.vnpt.hddtcustomer.models.bill.Bill;
+import com.vnpt.hddtcustomer.presenter.HDDTSharedPreference;
 import com.vnpt.hddtcustomer.presenter.SearchBillPresenter;
 import com.vnpt.hddtcustomer.views.activity.CTHDActivity;
 import com.vnpt.hddtcustomer.views.activity.MainActivity;
@@ -34,19 +36,16 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
     private EditText etSearchBill;
     private ListBillAdapter listBillAdapter;
     private SearchBillPresenter searchBillPresenter;
+    private int currentUserId;
+    private static final String KEY_PREFS = "CurrentUserID";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         listBill = new ArrayList<Bill>();
-        listBill.add(new Bill("1-10/2014", "11054", "11619", 455, 123456, "Da thanh toan", "Dien"));
-        listBill.add(new Bill("1-9/2014", "10600", "11054", 454, 123456, "Da thanh toan", "Dien"));
-        listBill.add(new Bill("1-08/2014", "10189", "10600", 411, 123456, "Da thanh toan", "Dien"));
-        listBill.add(new Bill("1-07/2014", "9721", "10189", 468, 123456, "Da thanh toan", "Dien"));
-        listBill.add(new Bill("1-06/2014", "9368", "10189", 468, 123456, "Da thanh toan", "Dien"));
-        listBill.add(new Bill("1-05/2014", "9368", "10189", 413, 123456, "Da thanh toan", "Dien"));
-        listBill.add(new Bill("1-04/2014", "9368", "10189", 413, 123456, "Da thanh toan", "Dien"));
-
+        TbInvoice tbInvoice = new TbInvoice(this.getActivity());
+        currentUserId = Integer.parseInt(new HDDTSharedPreference(this.getActivity()).getValue(KEY_PREFS));
+        listBill = tbInvoice.getBillFollowOwner(currentUserId);
     }
 
     @Nullable

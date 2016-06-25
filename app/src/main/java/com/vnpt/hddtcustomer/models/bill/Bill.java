@@ -4,71 +4,117 @@ package com.vnpt.hddtcustomer.models.bill;
 import java.io.Serializable;
 
 public class Bill implements Serializable {
-    private String _period, _csdk, _csck, _status, _type;
-    private int _money, _sl;
-    private final int pos1, pos2;
+    private String _number, _datetime, _dueDate, _status, _type;
+    private int _id ,_price, _sl, _ownerID,  _csdk, _csck;
 
-    public Bill(String period, String csdk, String csck, int sl, int money, String status, String type){
-        this._period = period;
+    public Bill(int id, String number, String datetime, int ownerID, int price, String status, String dueDate,
+                int csdk, int csck, String type){
+        this._id = id;
+        this._number = number;
+        this._datetime = datetime;
+        this._ownerID = ownerID;
+        this._price = price;
+        this._status = status;
+        this._dueDate = dueDate;
         this._csdk = csdk;
         this._csck = csck;
-        this._sl = sl;
-        this._money = money;
-        this._status = status;
         this._type = type;
-        pos1 = period.indexOf("-");
-        pos2 = period.indexOf("/") + 1;
     }
 
-    public void set_period(String period){
-        this._period = period;
-    }
-    public void set_csdk(String csdk){
-        this._csdk = csdk;
-    }
-    public void set_csck(String csck){
-        this._csck = csck;
-    }
-    public void set_status(String status){
-        this._status = status;
-    }
-    public void set_type(String _type) {
-        this._type = _type;
-    }
-    public void set_sl(int sl){
-        this._sl = sl;
-    }
-    public void set_money(int money){
-        this._money = money;
+    public String get_number() {
+        return _number;
     }
 
-    public String get_period(){
-        return this._period;
-    }
-    public int get_month() {
-        return Integer.parseInt(this.get_period().substring(pos1+1, pos2-1));
+    public void set_number(String _number) {
+        this._number = _number;
     }
 
-    public int get_year() {
-        return Integer.parseInt(this.get_period().substring(pos2));
+    public String get_datetime() {
+        return _datetime;
     }
-    public String get_csdk(){
-        return this._csdk;
+
+    public void set_datetime(String _datetime) {
+        this._datetime = _datetime;
     }
-    public String get_csck(){
-        return this._csck;
+
+    public String get_dueDate() {
+        return _dueDate;
     }
-    public String get_status(){
-        return this._status;
+
+    public void set_dueDate(String _dueDate) {
+        this._dueDate = _dueDate;
     }
+
+    public int get_csdk() {
+        return _csdk;
+    }
+
+    public void set_csdk(int _csdk) {
+        this._csdk = _csdk;
+    }
+
+    public int get_csck() {
+        return _csck;
+    }
+
+    public void set_csck(int _csck) {
+        this._csck = _csck;
+    }
+
+    public String get_status() {
+        return _status;
+    }
+
+    public void set_status(String _status) {
+        this._status = _status;
+    }
+
     public String get_type() {
         return _type;
     }
-    public int get_sl(){
-        return this._sl;
+
+    public void set_type(String _type) {
+        this._type = _type;
     }
-    public int get_money(){
-        return this._money;
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public int get_price() {
+        return _price;
+    }
+
+    public void set_price(int _price) {
+        this._price = _price;
+    }
+
+    public int get_sl() {
+        return this._csck - this._csdk;
+    }
+
+
+    public int get_ownerID() {
+        return _ownerID;
+    }
+
+    public void set_ownerID(int _ownerID) {
+        this._ownerID = _ownerID;
+    }
+
+    public int get_month(){
+        int pos1 = this.get_datetime().indexOf("/");
+        int pos2 = this.get_datetime().lastIndexOf("/");
+        return Integer.parseInt(this.get_datetime().substring(pos1+1, pos2));
+    }
+
+    public int get_year(){
+        int pos = this.get_datetime().lastIndexOf("/");
+        return Integer.parseInt(this.get_datetime().substring(pos+1));
     }
 
 }

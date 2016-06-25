@@ -3,9 +3,9 @@ package com.vnpt.hddtcustomer.interfaces;
 
 public interface OnLoginFinishedListener {
 
-    public void onPhoneNumberError();
+    public void onUsernameError();
 
     public void onPasswordError();
 
-    public void onSuccess();
+    public void onSuccess(int id);
 }

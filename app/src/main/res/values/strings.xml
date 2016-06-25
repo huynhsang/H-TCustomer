@@ -85,6 +85,8 @@
     <string name="lblCSCK">Chỉ số cuối kỳ</string>
     <string name="lblSL">Sản lượng</string>
     <string name="lblSoTien">Số tiền</string>
+    <string name="lblStatus0">Chưa thanh toán</string>
+    <string name="lblStatus1">Đã thanh toán</string>
 
     <!--chart-->
     <string name="lblChart">BIỂU ĐỒ SỬ DỤNG</string>

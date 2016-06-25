@@ -78,7 +78,7 @@ public class SearchBillPresenter {
     private void searchItem(String text){
 
         for(Bill item : arrayBill){
-            if(!item.get_period().contains(text)){
+            if(!item.get_datetime().contains(text)){
                 billList.remove(item);
             }
         }

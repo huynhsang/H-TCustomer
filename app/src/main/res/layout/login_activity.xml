@@ -35,6 +35,7 @@
                 android:layout_height="50dp"
                 android:layout_width="match_parent"
                 android:hint="Tên đăng nhập"
+                android:inputType="textEmailAddress"
                 android:id="@+id/ETUsername"
                 android:background="@drawable/rounded_layout"/>
 
@@ -49,6 +50,7 @@
                 android:layout_height="50dp"
                 android:layout_width="match_parent"
                 android:hint="Mật khẩu"
+                android:inputType="textPassword"
                 android:id="@+id/ETPassword"
                 android:layout_below="@+id/borderUserPass"
                 android:background="@drawable/rounded_layout"/>

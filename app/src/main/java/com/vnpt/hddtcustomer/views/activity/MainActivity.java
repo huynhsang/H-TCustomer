@@ -239,6 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else{
             etSearchBill.setVisibility(View.GONE);
             titleMainView.setVisibility(View.VISIBLE);
+            btnToChart.setVisibility(View.VISIBLE);
         }
     }
 
