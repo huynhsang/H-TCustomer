@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainContent"
+    android:fitsSystemWindows="true"
+    tools:context=".views.activity.MainActivity">
+    <!--Header-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headerMainView"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/colorLightBlue">
+
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:text="@string/icon_menu"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/btnToLeftMenu"
+            android:clickable="true"
+            />
+
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/VNFGotham"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeTitleMain"
+            android:textColor="@color/colorWhite"
+            android:text="@string/lblHome"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/titleMainView"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etSearchBill"
+            android:hint="@string/lblSearch"
+            android:textSize="@dimen/fontSizeDefault"
+            android:layout_toEndOf="@+id/btnToLeftMenu"
+            android:layout_toStartOf="@+id/btnToSearch"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:inputType="text"
+            android:paddingTop="0dp"
+            android:paddingBottom="8dp"
+            android:visibility="invisible"/>
+
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSizeNormal"
+            android:textColor="@color/colorWhite"
+            android:text="@string/icon_search"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btnToSearch"
+            android:clickable="true"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragMainContent"
+        android:layout_below="@+id/headerMainView"/>
+</RelativeLayout>

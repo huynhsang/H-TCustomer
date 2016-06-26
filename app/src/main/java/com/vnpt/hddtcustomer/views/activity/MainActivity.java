@@ -6,36 +6,26 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ListFragment;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.util.DisplayMetrics;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.EditText;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.vnpt.hddtcustomer.R;
-import com.vnpt.hddtcustomer.graphics.animation.MenuAnimation;
-import com.vnpt.hddtcustomer.models.menu.ExpandableListDataLeftMenu;
-import com.vnpt.hddtcustomer.presenter.SearchBillPresenter;
-import com.vnpt.hddtcustomer.views.adapter.ExpandableListAdapterMenu;
 import com.vnpt.hddtcustomer.views.fragment.BillFragment;
 import com.vnpt.hddtcustomer.views.fragment.ChartFragment;
 import com.vnpt.hddtcustomer.views.fragment.ConfigFragment;
@@ -45,21 +35,12 @@ import com.vnpt.hddtcustomer.views.fragment.HomeFragment;
 import com.vnpt.hddtcustomer.views.fragment.LookupFragment;
 import com.vnpt.hddtcustomer.views.fragment.NotifyFragment;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
 
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
-    private TextView btnToLeftMenu, btnToSearch, titleMainView, btnToChart;
+    private TextView btnToLeftMenu, btnToSearch, titleMainView, tvUsername, tvUserphone;
     private EditText etSearchBill;
-    private MenuAnimation menuAnimation;
-    private RelativeLayout mainContentLayout, leftMenuLayout;
-    private ExpandableListView expandableListView;
-    private ExpandableListAdapter expandableListAdapter;
-    private List<String> expandableListDataHeader;
-    private LinkedHashMap<String, List<String>> expandableListDetail;
+    private DrawerLayout drawer;
+    private NavigationView navigationView;
 
     private static final int NOTIFY_TIME_OUT = 3000;
     private static final int NOTIFY_ID = 1111;
@@ -67,187 +48,145 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
-
-        Typeface fontAwesome = Typeface.createFromAsset(getAssets(),"fonts/fontawesome-webfont.ttf");
+        setContentView(R.layout.activity_main);
 
         btnToLeftMenu = (TextView) findViewById(R.id.btnToLeftMenu);
-        btnToLeftMenu.setTypeface(fontAwesome);
         btnToLeftMenu.setOnClickListener(this);
 
         btnToSearch = (TextView) findViewById(R.id.btnToSearch);
-        btnToSearch.setTypeface(fontAwesome);
         btnToSearch.setOnClickListener(this);
-
-        btnToChart = (TextView) findViewById(R.id.btnToChart);
-        btnToChart.setTypeface(fontAwesome);
-        btnToChart.setOnClickListener(this);
 
         titleMainView = (TextView) findViewById(R.id.titleMainView);
 
         etSearchBill = (EditText) findViewById(R.id.etSearchBill);
 
-        mainContentLayout = (RelativeLayout) findViewById(R.id.mainContent);
-        leftMenuLayout = (RelativeLayout) findViewById(R.id.leftMenuContent);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
 
-        // get the expandablelistview
-        expandableListView = (ExpandableListView) findViewById(R.id.expandableListMenuView);
-        expandableListDetail = ExpandableListDataLeftMenu.getData();
-        expandableListDataHeader = new ArrayList<String>(expandableListDetail.keySet());
-        expandableListAdapter = new ExpandableListAdapterMenu(this, expandableListDataHeader, expandableListDetail);
-        // setting list adapter
-        expandableListView.setAdapter(expandableListAdapter);
-
-
-        // ExpandableListview on child click listener
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                toListBill();
-                btnToChart.setVisibility(View.VISIBLE);
-                btnToSearch.setVisibility(View.VISIBLE);
-                menuAnimation.toggleMenu();
-                return false;
-            }
-        });
-
-        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                handleOnGroupClick(groupPosition);
-                return false;
-            }
-        });
-
-
-        menuAnimation = new MenuAnimation(this);
-        initializeAnimation();
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         getFragment();
 
         setShowNotification();
     }
 
-    private void handleOnGroupClick(int groupId) {
-        Fragment fragment = null;
-        Class fragmentClass = null;
-        etSearchBill.setVisibility(View.GONE);
-        titleMainView.setVisibility(View.VISIBLE);
-        btnToSearch.setVisibility(View.GONE);
-        btnToChart.setVisibility(View.GONE);
-        switch (groupId){
-            case 0:
-                fragmentClass = HomeFragment.class;
-                titleMainView.setText(R.string.lblHome);
-                btnToSearch.setVisibility(View.VISIBLE);
-                break;
-            case 1:
-                break;
-            case 2:
-                fragmentClass = LookupFragment.class;
-                titleMainView.setText(R.string.lblBillLookup);
-                btnToSearch.setVisibility(View.VISIBLE);
-                break;
-            case 3:
-                fragmentClass = ContactFragment.class;
-                titleMainView.setText("PHẢN HỒI SAI SÓT");
-                break;
-            case 4:
-                fragmentClass = ConfigFragment.class;
-                titleMainView.setText("CẤU HÌNH");
-                break;
-            case 5:
-                fragmentClass = GuideFragment.class;
-                titleMainView.setText("HƯỚNG DẪN SỬ DỤNG");
-                break;
-            case 6:
-                toLogout();
-                break;
-            default:
-                break;
-        }
-        if(fragmentClass != null){
-            try{
-                fragment = (Fragment) fragmentClass.newInstance();
-                //Insert the fragment by replacing any existing fragment
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragMainContent, fragment).commit();
-                menuAnimation.toggleMenu();
-            } catch (Exception e){
-                e.printStackTrace();
-            }
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
         }
     }
 
-    private void initializeAnimation() {
-        final ViewTreeObserver leftLayoutObserver = leftMenuLayout.getViewTreeObserver(); //tao 1 giam sat leftlayoutmenu
-        leftLayoutObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener(){ //lang nghe neu leftlayoutmenu thay doi
-            @Override
-            public void onGlobalLayout() {
-                leftMenuLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this); //tao 1 giam sat moi va xoa giam sat cu
-                DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-                int diviceWith = displayMetrics.widthPixels;
-                int leftMenuLayoutWidth = (diviceWith*90)/100;
-
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(leftMenuLayoutWidth, RelativeLayout.LayoutParams.MATCH_PARENT);
-                leftMenuLayout.setLayoutParams(params);
-
-                menuAnimation.initializeLeftMenuAnimation(leftMenuLayout);
-            }
-        });
-
-
-        final ViewTreeObserver mainConentObserver = mainContentLayout.getViewTreeObserver();
-        mainConentObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                mainContentLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                menuAnimation.initializeMainContentAnimation(mainContentLayout);
-            }
-        });
-    }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
         switch (id){
             case R.id.btnToLeftMenu:
-                menuAnimation.toggleMenu();
+                drawer.openDrawer(GravityCompat.START);
                 break;
             case R.id.btnToSearch:
-                toggleSearch();
-                break;
-            case R.id.btnToChart:
-                toChart();
+                toSearchListBill();
                 break;
         }
     }
 
-    private void toListBill(){
-        titleMainView.setText(R.string.lblBill);
-        BillFragment billFragment = new BillFragment();
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        Fragment fragment = null;
+        Class fragmentClass = null;
+        titleMainView.setVisibility(View.VISIBLE);
+        etSearchBill.setVisibility(View.GONE);
+        btnToSearch.setVisibility(View.GONE);
+        switch (id){
+            case R.id.drawer_home:
+                fragmentClass = HomeFragment.class;
+                titleMainView.setText(R.string.lblHome);
+                btnToSearch.setVisibility(View.VISIBLE);
+                break;
+            case R.id.drawer_lookup:
+                fragmentClass = LookupFragment.class;
+                titleMainView.setText(R.string.lblBillLookup);
+                btnToSearch.setVisibility(View.GONE);
+                break;
+            case R.id.drawer_elec:
+                titleMainView.setText(R.string.lblElecBill);
+                fragment = (BillFragment) new BillFragment("Dien");
+                break;
+            case R.id.drawer_water:
+                titleMainView.setText(R.string.lblWaterBill);
+                fragment = (BillFragment) new BillFragment("Nuoc");
+                break;
+            case R.id.drawer_tele:
+                titleMainView.setText(R.string.lblTeleBill);
+                fragment = (BillFragment) new BillFragment("Vienthong");
+                break;
+            case R.id.drawer_guide:
+                fragmentClass = GuideFragment.class;
+                titleMainView.setText(R.string.guideTitle);
+                break;
+            case R.id.drawer_config:
+                fragmentClass = ConfigFragment.class;
+                titleMainView.setText(R.string.configTitle);
+                break;
+            case R.id.drawer_contact:
+                fragmentClass = ContactFragment.class;
+                titleMainView.setText(R.string.phssTitle);
+                break;
+            case R.id.drawer_logout:
+                toLogout();
+                return false;
+        }
+        if((id != R.id.drawer_elec) || (id != R.id.drawer_water) || (id != R.id.drawer_tele)){
+            try{
+                fragment = (Fragment) fragmentClass.newInstance();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        //Insert the fragment by replacing any existing fragment
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragMainContent, billFragment).commit();
+        fragmentTransaction.replace(R.id.fragMainContent, fragment).commit();
+
+        drawer.closeDrawer(GravityCompat.START);
+        return false;
     }
 
-    private void toggleSearch(){
+    public void toggleSearch(){
         if(etSearchBill.getVisibility() != View.VISIBLE){
             etSearchBill.setVisibility(View.VISIBLE);
             titleMainView.setVisibility(View.GONE);
-            btnToChart.setVisibility(View.GONE);
-            toListBill();
         }else{
             etSearchBill.setVisibility(View.GONE);
             titleMainView.setVisibility(View.VISIBLE);
-            btnToChart.setVisibility(View.VISIBLE);
         }
     }
 
-    private void toChart(){
+    public void toChart(){
+        btnToSearch.setVisibility(View.VISIBLE);
         titleMainView.setText(R.string.lblChart);
         ChartFragment chartFragment = new ChartFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragMainContent, chartFragment).commit();
+    }
+
+    private void toSearchListBill(){
+        titleMainView.setText(R.string.lblBill);
+        BillFragment billFragment = new BillFragment();
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragMainContent, billFragment).commit();
+
+        titleMainView.setVisibility(View.GONE);
+        btnToSearch.setVisibility(View.GONE);
+        etSearchBill.setVisibility(View.VISIBLE);
     }
 
     private void setShowNotification(){
@@ -293,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     toChart();
                     break;
                 case "SearchBill":
-                    toggleSearch();
+                    toSearchListBill();
                     break;
             }
         }else{

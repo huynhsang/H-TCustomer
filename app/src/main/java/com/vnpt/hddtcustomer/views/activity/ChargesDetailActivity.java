@@ -32,7 +32,6 @@ public class ChargesDetailActivity extends AppCompatActivity {
             }
         });
         btnToBack = (TextView) findViewById(R.id.btnToBack);
-        btnToBack.setTypeface(fontAwesome);
         btnToBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +39,6 @@ public class ChargesDetailActivity extends AppCompatActivity {
             }
         });
         btnToSearch = (TextView) findViewById(R.id.btnToSearch);
-        btnToSearch.setTypeface(fontAwesome);
         btnToSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

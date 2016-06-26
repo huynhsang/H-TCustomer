@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -8,7 +10,8 @@
         android:padding="5dp"
         android:background="@color/colorLightBlue">
 
-        <TextView
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeNormal"
@@ -19,7 +22,8 @@
             android:id="@+id/btnToBack"
             android:clickable="true"
             />
-        <TextView
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/VNFGotham"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeTitleMain"
@@ -29,7 +33,8 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/titleMainView"/>
 
-        <TextView
+        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+            app:font="@string/font_fontawesome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/fontSizeNormal"

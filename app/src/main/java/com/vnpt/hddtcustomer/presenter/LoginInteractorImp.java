@@ -50,10 +50,6 @@ public class LoginInteractorImp implements LoginInteractor {
     @Override
     public void checkLogin(final String username, final String password, final List<Customer> customerList, final OnLoginFinishedListener listener) {
         this._customerList = customerList;
-        System.out.println(_customerList.size());
-        System.out.println(_customerList.get(14).get_email());
-        System.out.println(username);
-        System.out.println(password);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

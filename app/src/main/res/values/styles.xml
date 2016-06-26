@@ -18,7 +18,7 @@
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="menuIcon">
+    <style name="tabMenuIcon">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -38,6 +38,11 @@
         <item name="android:padding">@dimen/paddingSizeDefault</item>
         <item name="android:textSize">@dimen/fontSizeDefault</item>
         <item name="android:textStyle">bold</item>
+    </style>
+    <!--TabLayout-->
+    <style name="TabLayout" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
 </resources>

@@ -58,7 +58,7 @@
             <!--Share-->
             <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
                 app:font="@string/font_fontawesome"
-                style="@style/menuIcon"
+                style="@style/tabMenuIcon"
                 android:text="@string/icon_share"
                 android:id="@+id/btnToShare"/>
 

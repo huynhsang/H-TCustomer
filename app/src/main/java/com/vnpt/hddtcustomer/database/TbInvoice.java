@@ -27,7 +27,22 @@ public class TbInvoice extends DatabaseHelper{
         return bill;
     }
 
-    public List<Bill> getBillFollowOwner(int ownerID){
+    public List<Bill> getOwnerBillFollowType(int ownerID, String type){
+        Bill bill = null;
+        List<Bill> billList = new ArrayList<>();
+        String where = "IdCustomer=" + ownerID + " AND Type=\"" + type + "\"";
+        Cursor cursor = this.QUERY_SELECT_OWNER(TB_NAME, where);
+        while (!cursor.isAfterLast()){
+            bill = new Bill(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getInt(3), cursor.getInt(4), cursor.getString(5),
+                    cursor.getString(6), cursor.getInt(7), cursor.getInt(8), cursor.getString(9));
+            billList.add(bill);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return billList;
+    }
+
+    public List<Bill> getAllBillFollowOwner(int ownerID){
         Bill bill = null;
         List<Bill> billListOwner = new ArrayList<>();
         String whereOwner = "IdCustomer=" + ownerID;

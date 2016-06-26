@@ -24,7 +24,6 @@ public class LoginPresenterImp implements LoginPresenter, OnLoginFinishedListene
         this._context = context;
         TbCustomer tbCustomer = new TbCustomer(context);
         customerList = tbCustomer.getAllCustomer();
-        System.out.println(customerList.size());
         this.loginInteractor = new LoginInteractorImp();
     }
 

@@ -55,14 +55,14 @@
         <!--Bill Detail-->
         <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
             app:font="@string/font_fontawesome"
-            style="@style/menuIcon"
+            style="@style/tabMenuIcon"
             android:text="@string/icon_file_text"
             android:id="@+id/cthd_btntoMoreDetail"/>
 
         <!--Refresh-->
         <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
             app:font="@string/font_fontawesome"
-            style="@style/menuIcon"
+            style="@style/tabMenuIcon"
             android:text="@string/icon_refresh"
             android:id="@+id/cthd_btntoRefresh"/>
     </LinearLayout>

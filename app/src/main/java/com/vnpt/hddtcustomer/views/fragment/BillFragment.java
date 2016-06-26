@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -34,10 +35,21 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
     private List<Bill> listBill;
     private ListView lvBill;
     private EditText etSearchBill;
+    private TextView btnSearch, btnChart;
     private ListBillAdapter listBillAdapter;
     private SearchBillPresenter searchBillPresenter;
     private int currentUserId;
+    private String type;
     private static final String KEY_PREFS = "CurrentUserID";
+
+    public BillFragment(){
+        type = "all";
+    }
+
+    public BillFragment(String type){
+        this.type = type;
+    }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,15 +57,25 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         listBill = new ArrayList<Bill>();
         TbInvoice tbInvoice = new TbInvoice(this.getActivity());
         currentUserId = Integer.parseInt(new HDDTSharedPreference(this.getActivity()).getValue(KEY_PREFS));
-        listBill = tbInvoice.getBillFollowOwner(currentUserId);
+        if(type.equals("all")){
+            listBill = tbInvoice.getAllBillFollowOwner(currentUserId);
+        }else{
+            listBill = tbInvoice.getOwnerBillFollowType(currentUserId, type);
+        }
+
     }
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         billView = inflater.inflate(R.layout.frag_bill, container, false);
         lvBill = (ListView) billView.findViewById(R.id.lvBill);
+        btnSearch = (TextView) billView.findViewById(R.id.btnSearch);
+        btnChart = (TextView) billView.findViewById(R.id.btnChart);
+
         etSearchBill = ((MainActivity)getActivity()).getEtSearchBill();
+        hideBtnChart();
 
         return billView;
     }
@@ -65,6 +87,25 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         searchBillPresenter.initializeSearch();
         setListViewAdapter();
         lvBill.setOnItemClickListener(this);
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnChart.getVisibility() != View.VISIBLE){
+                    btnChart.setVisibility(View.VISIBLE);
+                }else{
+                    btnChart.setVisibility(View.GONE);
+                }
+                ((MainActivity)getActivity()).toggleSearch();
+            }
+        });
+
+        btnChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toChart();
+            }
+        });
     }
 
     @Override
@@ -85,5 +126,10 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         lvBill.setAdapter(listBillAdapter);
     }
 
+    private void hideBtnChart(){
+        if(type.equals("all")){
+            btnChart.setVisibility(View.GONE);
+        }
+    }
 
 }

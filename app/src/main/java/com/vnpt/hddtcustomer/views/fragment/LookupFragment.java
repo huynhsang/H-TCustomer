@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class LookupFragment extends Fragment implements View.OnClickListener{
     private EditText etBillTime;
     private Typeface fontAwesome;
     private Button btnToLookup;
+    private LinearLayout navigatorBill;
     private SearchBillPresenter searchBillPresenter;
     private static final int DATE_PICKER_ID = 1111;
 
@@ -60,6 +62,7 @@ public class LookupFragment extends Fragment implements View.OnClickListener{
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         BillFragment billFragment = new BillFragment();
+
         fragmentTransaction.add(R.id.fragContentList, billFragment).commit();
 
         return lookupView;
@@ -89,6 +92,9 @@ public class LookupFragment extends Fragment implements View.OnClickListener{
     public void onStart() {
         super.onStart();
         BillFragment billFragment = (BillFragment)getChildFragmentManager().findFragmentById(R.id.fragContentList);
+        View view = billFragment.getView();
+        navigatorBill = (LinearLayout) view.findViewById(R.id.navigatorBill);
+        navigatorBill.setVisibility(View.GONE);
         searchBillPresenter = new SearchBillPresenter(billFragment.getView(), etBillTime, billFragment.getListBill());
     }
 

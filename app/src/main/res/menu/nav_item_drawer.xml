@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/drawer_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/nav_lblHome"/>
+    <item
+        android:id="@+id/drawer_lookup"
+        android:icon="@drawable/ic_action_search"
+        android:title="@string/nav_lblLookup" />
+
+    <item android:title="@string/nav_lblBill">
+        <menu>
+            <item
+                android:id="@+id/drawer_elec"
+                android:icon="@drawable/ic_play_arrow_black_24dp"
+                android:title="@string/nav_lblElecBill" />
+            <item
+                android:id="@+id/drawer_water"
+                android:icon="@drawable/ic_play_arrow_black_24dp"
+                android:title="@string/nav_lblWaterBill" />
+            <item
+                android:id="@+id/drawer_tele"
+                android:icon="@drawable/ic_play_arrow_black_24dp"
+                android:title="@string/nav_lblTeleBill" />
+        </menu>
+    </item>
+
+    <item android:title="@string/nav_lblSystem">
+        <menu>
+            <group  android:checkableBehavior="single">
+                <item
+                    android:id="@+id/drawer_guide"
+                    android:icon="@drawable/ic_directions_black_24dp"
+                    android:title="@string/nav_lblGuide" />
+                <item
+                    android:id="@+id/drawer_config"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="@string/nav_lblConfig" />
+                <item
+                    android:id="@+id/drawer_contact"
+                    android:icon="@drawable/ic_send_black_24dp"
+                    android:title="@string/nav_lblContact" />
+                <item
+                    android:id="@+id/drawer_logout"
+                    android:icon="@drawable/ic_power_settings_new_black_24dp"
+                    android:title="@string/nav_lblLogout" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
