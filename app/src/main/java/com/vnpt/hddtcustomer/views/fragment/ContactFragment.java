@@ -1,6 +1,7 @@
 package com.vnpt.hddtcustomer.views.fragment;
 
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +22,12 @@ public class ContactFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contactView = inflater.inflate(R.layout.frag_contact, container, false);
+
+        ImageView img=(ImageView) contactView.findViewById(R.id.phss_bg);
+        if(getResources().getDisplayMetrics().widthPixels>getResources().getDisplayMetrics().heightPixels){
+        img.setVisibility(View.INVISIBLE);}
+        else{img.setVisibility(View.VISIBLE);}
+
         btnToPhanhoi=(TextView) contactView.findViewById(R.id.phss_btntoPhanHoi);
         btnToPhanhoi.setOnClickListener(new View.OnClickListener() {
             @Override

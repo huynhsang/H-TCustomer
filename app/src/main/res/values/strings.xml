@@ -130,7 +130,7 @@
 
     <!--logout-->
     <string name="lblLgNotices">Thông báo</string>
-    <string name="lblLgMsg">Bạn muốn thoát khỏi chương trình</string>
+    <string name="lblLgMsg">Bạn muốn thoát khỏi chương trình?</string>
     <!--icon font awesome-->
     <string name="icon_chevron_left">&#xf053; " Back "</string>
     <string name="icon_menu">&#xf0c9; ""</string>

@@ -1,89 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/phss_bg"
-        android:orientation="vertical"
-        android:weightSum="1">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/phss_bg"
+        android:id="@+id/phss_bg"
+        />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            >
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/phss_label1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/phss_title1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/textDefault"
+                    android:textSize="@dimen/fontSizeDefault" />
+
+                <EditText
+                    android:id="@+id/phss_edt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/phss_label1"
+                    android:background="@drawable/border_edt1"
+                    android:inputType="text"
+                    android:padding="5dp"
+                    android:text="@string/phss_edt1"
+                    android:textColor="@color/textDefault"
+                    android:textSize="@dimen/fontSizeDefault" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="@string/phss_title2"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/phss_title1"
-                android:textSize="@dimen/fontSizeDefault"
                 android:textColor="@color/textDefault"
-                android:id="@+id/phss_label1"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp" />
+                android:textSize="@dimen/fontSizeDefault" />
 
             <EditText
+                android:id="@+id/phss_edt2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/phss_edt1"
-
-                android:text="@string/phss_edt1"
-                android:textSize="@dimen/fontSizeDefault"
-                android:textColor="@color/textDefault"
-                android:layout_toEndOf="@+id/phss_label1"
+                android:layout_height="200dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:background="@drawable/border_edt1"
-                android:layout_centerVertical="true"
-                android:padding="5dp"
-                android:inputType="text"/>
-        </RelativeLayout>
+                android:gravity="top|left"
+                android:hint="@string/phss_edt2"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:textAlignment="gravity"
+                android:textColor="@color/textDefault"
+                android:textColorHint="@color/colorGray"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/phss_title2"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="8dp"
-            />
+            <Button
+                android:id="@+id/phss_btntoPhanHoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/btn_radius_blue"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/phss_btntoPhanHoi"
+                android:textColor="@color/colorWhite" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/phss_edt2"
-            android:background="@drawable/border_edt1"
-            android:hint="@string/phss_edt2"
-            android:textColorHint="@color/colorGray"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault"
-            android:gravity="top|left"
-            android:textAlignment="gravity"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:inputType="textMultiLine"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/phss_btntoPhanHoi"
-            android:textColor="@color/colorWhite"
-            android:id="@+id/phss_btntoPhanHoi"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/btn_radius_blue"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_marginTop="50dp" />
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
 
