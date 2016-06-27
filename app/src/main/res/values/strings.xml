@@ -119,7 +119,7 @@
     <string name="guideContent">Nội dung hướng dẫn sử dụng</string>
 
     <!--notification-->
-    <string name="lblNotify">Thông báo cước</string>
+    <string name="lblNotify">THÔNG BÁO CƯỚC</string>
     <!--charges detail-->
     <string name="lblChargesDetail">CHI TIẾT CƯỚC</string>
     <string name="lblToSeeChart">Xem biểu đồ</string>

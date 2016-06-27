@@ -1,346 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <!--Main content-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="15dp"
-        android:paddingTop="15dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:background="@color/colorLightBlue">
-
-        <!--Left arrow-->
-        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
-            app:font="@string/font_fontawesome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontSizeNormal"
-            android:text="@string/icon_arrow_left"
-            android:textColor="@color/colorWhite"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/cthd_btntoBack"
-            android:clickable="true"
-            />
-
-        <!--Title-->
-        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
-            app:font="@string/VNFGotham"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontSizeTitleMain"
-            android:textColor="@color/colorWhite"
-            android:text="@string/lblBillDetail"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/cthd_titleMainView"
-            android:layout_below="@+id/cthd_btntoBack"/>
-
-
-    </RelativeLayout>
-
-    <!--Navigator-->
+    android:layout_height="match_parent">
     <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/navigator">
-
-        <!--Bill Detail-->
-        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
-            app:font="@string/font_fontawesome"
-            style="@style/tabMenuIcon"
-            android:text="@string/icon_file_text"
-            android:id="@+id/cthd_btntoMoreDetail"/>
-
-        <!--Refresh-->
-        <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
-            app:font="@string/font_fontawesome"
-            style="@style/tabMenuIcon"
-            android:text="@string/icon_refresh"
-            android:id="@+id/cthd_btntoRefresh"/>
-    </LinearLayout>
-
-    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="10dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_sts"
-            android:id="@+id/cthd_sts"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_stsV"
-            android:id="@+id/cthd_status"
-            android:layout_toEndOf="@id/cthd_sts"
-            android:layout_marginLeft="22dp"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/colorCyan"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_timepay"
-            android:id="@+id/cthd_timepay"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_timepayV"
-            android:id="@+id/cthd_timepayV"
-            android:layout_toEndOf="@id/cthd_timepay"
-            android:layout_marginLeft="5dp"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault"
-            android:textStyle="italic"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_formpay"
-            android:id="@+id/cthd_formpay"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textColor="@color/textDefault"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="@string/cthd_formpayV"
-            android:id="@+id/cthd_formpayV"
-            android:layout_toEndOf="@id/cthd_formpay"
-            android:layout_marginLeft="20dp"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textColor="#418708"/>
-    </RelativeLayout>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:text="@string/cthd_hdtd"
-        android:id="@+id/cthd_hdtd"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/fontSizeTitleMain"
-        android:layout_weight="0.15"
-        android:textAlignment="gravity"
-        android:gravity="center_vertical"
-        android:paddingLeft="80dp"
-        android:background="#406FD6"/>
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/table_default"
-        >
-        <TableRow
+        <!--Main content-->
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            >
-            <TextView
-                android:layout_width="0dp"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/colorLightBlue">
+
+            <!--Left arrow-->
+            <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                app:font="@string/font_fontawesome"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cthd_time"
-                android:layout_weight="3"
-                android:theme="@style/TableTheme" />
-            <TextView
-                android:layout_width="0dp"
+                android:textSize="@dimen/fontSizeNormal"
+                android:text="@string/icon_arrow_left"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/cthd_btntoBack"
+                android:clickable="true"
+                />
+
+            <!--Title-->
+            <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                app:font="@string/VNFGotham"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cthd_timeV"
-                android:id="@+id/cthd_interval"
-                android:layout_weight="7"
-                android:theme="@style/TableTheme"/>
-        </TableRow>
-        <TableRow
+                android:textSize="@dimen/fontSizeTitleMain"
+                android:textColor="@color/colorWhite"
+                android:text="@string/lblBillDetail"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/cthd_titleMainView"
+                android:layout_below="@+id/cthd_btntoBack"/>
+
+
+        </RelativeLayout>
+
+        <!--Navigator-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/cthd_fi"
-                android:layout_weight="3"
-                android:theme="@style/TableTheme" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/cthd_fiV"
-                android:id="@+id/cthd_csdk"
-                android:layout_weight="7"
-                android:theme="@style/TableTheme"/>
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/cthd_di"
-                android:layout_weight="3"
-                android:theme="@style/TableTheme" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/cthd_fiV"
-                android:id="@+id/cthd_csck"
-                android:layout_weight="7"
-                android:theme="@style/TableTheme"/>
-        </TableRow>
-    </TableLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/border_bottom_default"
-        android:paddingTop="10dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_money_label"
-            android:id="@+id/cthd_moneyTlt_label"
-            android:textAlignment="gravity"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:paddingLeft="80dp" />
+            android:orientation="horizontal"
+            android:id="@+id/navigator">
+
+            <!--Bill Detail-->
+            <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                app:font="@string/font_fontawesome"
+                style="@style/tabMenuIcon"
+                android:text="@string/icon_file_text"
+                android:id="@+id/cthd_btntoMoreDetail"/>
+
+            <!--Refresh-->
+            <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
+                app:font="@string/font_fontawesome"
+                style="@style/tabMenuIcon"
+                android:text="@string/icon_refresh"
+                android:id="@+id/cthd_btntoRefresh"/>
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp">
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/cthd_moneyV"
-                android:id="@+id/cthd_money"
-                android:textColor="#ffffff"
+                android:text="@string/cthd_sts"
+                android:id="@+id/cthd_sts"
                 android:textSize="@dimen/fontSizeDefault"
-                android:textStyle="bold"
-                android:layout_marginLeft="80dp"
-                android:padding="5dp"
-                android:background="#7ABE43"/>
+                android:textColor="@color/textDefault"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/cthd_moneyCur"
-                android:id="@+id/cthd_moneyCur"
-                android:layout_toEndOf="@id/cthd_money"
-                android:textColor="#ffffff"
+                android:text="@string/cthd_stsV"
+                android:id="@+id/cthd_status"
+                android:layout_toEndOf="@id/cthd_sts"
+                android:layout_marginLeft="22dp"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textColor="@color/colorCyan"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_timepay"
+                android:id="@+id/cthd_timepay"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textColor="@color/textDefault"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_timepayV"
+                android:id="@+id/cthd_timepayV"
+                android:layout_toEndOf="@id/cthd_timepay"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textColor="@color/textDefault"
+                android:textStyle="italic"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_formpay"
+                android:id="@+id/cthd_formpay"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textColor="@color/textDefault"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/cthd_formpayV"
+                android:id="@+id/cthd_formpayV"
+                android:layout_toEndOf="@id/cthd_formpay"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/fontSizeDefault"
+                android:textColor="#418708"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="@string/cthd_hdtd"
+            android:id="@+id/cthd_hdtd"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/fontSizeTitleMain"
+            android:layout_weight="0.15"
+            android:textAlignment="gravity"
+            android:gravity="center_vertical"
+            android:paddingLeft="80dp"
+            android:background="#406FD6"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/table_default"
+            >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cthd_time"
+                    android:layout_column="3"
+                    android:theme="@style/TableTheme" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cthd_timeV"
+                    android:id="@+id/cthd_interval"
+                    android:layout_column="7"
+                    android:theme="@style/TableTheme"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cthd_fi"
+                    android:layout_column="3"
+                    android:theme="@style/TableTheme" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cthd_fiV"
+                    android:id="@+id/cthd_csdk"
+                    android:layout_column="7"
+                    android:theme="@style/TableTheme"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cthd_di"
+                    android:layout_column="3"
+                    android:theme="@style/TableTheme" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cthd_fiV"
+                    android:id="@+id/cthd_csck"
+                    android:layout_column="7"
+                    android:theme="@style/TableTheme"/>
+            </TableRow>
+        </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_bottom_default"
+            android:paddingTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_money_label"
+                android:id="@+id/cthd_moneyTlt_label"
+                android:textAlignment="gravity"
+                android:textColor="@color/textDefault"
                 android:textSize="@dimen/fontSizeDefault"
                 android:textStyle="bold"
-                android:padding="5dp"
-                android:background="#7ABE43"/>
+                android:gravity="center_vertical"
+                android:paddingLeft="80dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/cthd_moneyV"
+                    android:id="@+id/cthd_money"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/fontSizeDefault"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="80dp"
+                    android:padding="5dp"
+                    android:background="#7ABE43"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/cthd_moneyCur"
+                    android:id="@+id/cthd_moneyCur"
+                    android:layout_toEndOf="@id/cthd_money"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/fontSizeDefault"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:background="#7ABE43"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_signKH"
+                android:textColor="@color/textDefault"
+                android:textSize="@dimen/fontSizeDefault"
+                android:id="@+id/cthd_signKH" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/cthd_signTT"
+                android:id="@+id/cthd_signTT"
+                android:textColor="@color/textDefault"
+                android:textSize="@dimen/fontSizeDefault"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/camera"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/phss_imgCamera" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/record"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/imageView2"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/phss_imgCamera"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/note"
+                android:id="@+id/imageView"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/imageView2"
+                android:layout_marginLeft="15dp" />
         </RelativeLayout>
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_signKH"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:id="@+id/cthd_signKH" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cthd_signTT"
-            android:id="@+id/cthd_signTT"
-            android:textColor="@color/textDefault"
-            android:textSize="@dimen/fontSizeDefault"
-            android:layout_alignParentRight="true" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp">
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/camera"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/phss_imgCamera" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/record"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/imageView2"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/phss_imgCamera"
-            android:layout_marginLeft="15dp" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/note"
-            android:id="@+id/imageView"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageView2"
-            android:layout_marginLeft="15dp" />
-    </RelativeLayout>
-</LinearLayout>
+</ScrollView>

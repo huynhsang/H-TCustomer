@@ -64,17 +64,13 @@
 
         </LinearLayout>
 
-        <FrameLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fragMainContent"
-            android:layout_below="@+id/navigator"/>
+            android:layout_below="@+id/navigator"
+            android:src="@drawable/bill_content"
+            android:contentDescription="@string/descrip_bill_image" />
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/headerBorder"
-        android:src="@drawable/bill_content"
-        android:contentDescription="@string/descrip_bill_image" />
+
 </RelativeLayout>
