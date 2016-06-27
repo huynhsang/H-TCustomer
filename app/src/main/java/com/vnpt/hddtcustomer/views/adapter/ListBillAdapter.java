@@ -2,18 +2,26 @@ package com.vnpt.hddtcustomer.views.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.text.Html;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import android.util.Log;
 
 import com.vnpt.hddtcustomer.R;
 import com.vnpt.hddtcustomer.models.bill.Bill;
 
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 
 public class ListBillAdapter extends ArrayAdapter<Bill>{
@@ -44,7 +52,7 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.setTextView(bill.get_month(), bill.get_year(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_price(), bill.get_status());
+        holder.setTextView(bill.get_month(), bill.get_year(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_price(), bill.get_status(), bill.get_type());
         return convertView;
     }
 
@@ -76,13 +84,24 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             tvStatus = (TextView) v.findViewById(R.id.statusBill);
         }
 
-        public void setTextView(int monthBill, int yearBill, int csdkBill, int csckBill, int slBill, int moneyBill, String statusBill ){
+        public void setTextView(int monthBill, int yearBill, int csdkBill, int csckBill, int slBill, int moneyBill, String statusBill, String typeBill ){
             tvMonth.setText("T"+monthBill);
             tvYear.setText(""+yearBill);
             tvCSDK.setText(csdkBill + "");
             tvCSCK.setText(csckBill + "");
-            tvSL.setText(slBill + " kWh");
-            tvMoney.setText(moneyBill + " d");
+            if (typeBill.equals("Dien")) {
+                tvSL.setText(slBill + " kWh");
+            } else if (typeBill.equals("Nuoc")){
+                tvSL.setText(slBill + " m\u00B3");
+            } else if (typeBill.equals("Vienthong")){
+                tvSL.setText("" + slBill);
+            }
+
+            DecimalFormat format = new DecimalFormat("#,###.00");
+            format.setDecimalFormatSymbols(new DecimalFormatSymbols(Locale.ITALY));
+            double number = Double.parseDouble(""+moneyBill);
+            tvMoney.setText(format.format(number) + "đ");
+
             if(statusBill.equals("0")){
                 tvStatus.setText(R.string.lblStatus0);
             }else{

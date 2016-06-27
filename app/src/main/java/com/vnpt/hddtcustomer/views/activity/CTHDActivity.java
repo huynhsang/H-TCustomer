@@ -11,6 +11,10 @@ import android.widget.TextView;
 import com.vnpt.hddtcustomer.R;
 import com.vnpt.hddtcustomer.models.bill.Bill;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 public class CTHDActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView btnToback, btnToRefresh, btnToMoreDetail, titleMainView, cthd_status, cthd_interval, cthd_csdk, cthd_csck, cthd_money;
     @Override
@@ -75,7 +79,11 @@ public class CTHDActivity extends AppCompatActivity implements View.OnClickListe
                 .append(bill.get_year()).append(" - 30/").append(bill.get_month()).append("/").append(bill.get_year()));
         cthd_csdk.setText(bill.get_csdk() + "");
         cthd_csck.setText(bill.get_csck() + "");
-        cthd_money.setText(bill.get_price() + "");
+
+        DecimalFormat format = new DecimalFormat("#,###.00");
+        format.setDecimalFormatSymbols(new DecimalFormatSymbols(Locale.ITALY));
+        double number = Double.parseDouble(""+bill.get_price());
+        cthd_money.setText(format.format(number)+"");
     }
 
 }
