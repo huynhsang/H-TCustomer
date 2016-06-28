@@ -1,5 +1,6 @@
 package com.vnpt.hddtcustomer.views.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -46,6 +47,7 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         type = "all";
     }
 
+    @SuppressLint("ValidFragment")
     public BillFragment(String type){
         this.type = type;
     }
@@ -62,7 +64,6 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         }else{
             listBill = tbInvoice.getOwnerBillFollowType(currentUserId, type);
         }
-
     }
 
 
