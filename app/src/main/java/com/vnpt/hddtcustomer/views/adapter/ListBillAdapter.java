@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -73,6 +74,7 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
 
     private class ViewHolder{
         private TextView tvMonth, tvYear, tvCSDK, tvCSCK, tvSL, tvMoney, tvStatus;
+        private CheckBox checkBox;
 
         public ViewHolder(View v){
             tvMonth = (TextView) v.findViewById(R.id.monthBill);
@@ -82,6 +84,7 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             tvSL = (TextView) v.findViewById(R.id.slBill);
             tvMoney = (TextView) v.findViewById(R.id.moneyBill);
             tvStatus = (TextView) v.findViewById(R.id.statusBill);
+            checkBox = (CheckBox) v.findViewById(R.id.checkbox);
         }
 
         public void setTextView(int monthBill, int yearBill, int csdkBill, int csckBill, int slBill, int moneyBill, String statusBill, String typeBill ){
@@ -104,8 +107,10 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
 
             if(statusBill.equals("0")){
                 tvStatus.setText(R.string.lblStatus0);
+                checkBox.setChecked(false);
             }else{
                 tvStatus.setText(R.string.lblStatus1);
+                checkBox.setChecked(true);
             }
         }
 

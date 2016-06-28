@@ -3,10 +3,10 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/lookupForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/lookupForm"
         android:padding="12dp">
 
         <LinearLayout
@@ -44,10 +44,10 @@
                 android:textSize="@dimen/fontSizeDefault"/>
 
             <Spinner
+                android:id="@+id/billTypeSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:id="@+id/billTypeSpinner"
                 android:prompt="@string/billType_prompt"
                 android:entries="@array/billType_arrays"
                 android:background="@drawable/border_edt"
@@ -63,19 +63,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="@string/lblBillTime"
+                android:text="@string/lblBillTime_from"
                 android:textColor="@color/colorGray"
                 android:textSize="@dimen/fontSizeDefault"/>
 
             <EditText
+                android:id="@+id/etBillTime_from"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
                 android:inputType="date"
-                android:background="@drawable/border_edt"
-                android:id="@+id/etBillTime"/>
+                android:background="@drawable/border_edt" />
 
             <TextView
+                android:id="@+id/btnBillTime_from"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
@@ -83,13 +84,45 @@
                 android:gravity="right"
                 android:text="@string/icon_calendar"
                 android:textColor="@color/colorGray"
-                android:id="@+id/btnBillTime"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/lblBillTime_to"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/fontSizeDefault"/>
+
+            <EditText
+                android:id="@+id/etBillTime_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:inputType="date"
+                android:background="@drawable/border_edt" />
+
+            <TextView
+                android:id="@+id/btnBillTime_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textSize="@dimen/fontSizeDefault"
+                android:gravity="right"
+                android:text="@string/icon_calendar"
+                android:textColor="@color/colorGray"
                 android:clickable="true"/>
         </LinearLayout>
         <Button
+            android:id="@+id/btnToLookup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnToLookup"
             android:padding="5dp"
             android:text="@string/lblBillSearch"
             android:textColor="@color/colorWhite"
@@ -97,15 +130,15 @@
             android:background="@drawable/btn_radius_blue"/>
     </LinearLayout>
     <View
+        android:id="@+id/borderSpace"
         android:layout_height="1px"
         android:layout_width="match_parent"
         android:background="#000"
-        android:layout_below="@+id/lookupForm"
-        android:id="@+id/borderSpace"/>
+        android:layout_below="@+id/lookupForm"/>
 
     <FrameLayout
+        android:id="@+id/fragContentList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fragContentList"
         android:layout_below="@+id/borderSpace"/>
 </RelativeLayout>

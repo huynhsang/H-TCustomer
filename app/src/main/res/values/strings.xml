@@ -45,7 +45,8 @@
     <string name="lblBillLookup">TRA CỨU HÓA ĐƠN</string>
     <string name="lblBillNumber">Số hóa đơn</string>
     <string name="lblBillType">Loại hóa đơn</string>
-    <string name="lblBillTime">Thời gian</string>
+    <string name="lblBillTime_from">Từ ngày</string>
+    <string name="lblBillTime_to">Đến ngày</string>
     <string name="lblBillSearch">Tìm kiếm</string>
 
     <!--guide-->

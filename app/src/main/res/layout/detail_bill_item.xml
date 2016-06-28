@@ -71,8 +71,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical">
-                    <com.vnpt.hddtcustomer.graphics.font.CustomFontTextView
-                        app:font="@string/font_fontawesome"
+                    <CheckBox
+                        android:id="@+id/checkbox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/fontSizeDefault"
@@ -84,10 +84,8 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/fontSizeDefault"
                         android:text="Đã thanh toán"
-                        android:textColor="@color/colorCyan"
-                        android:layout_marginLeft="7dp"/>
+                        android:textColor="@color/colorCyan"/>
                 </LinearLayout>
-
             </LinearLayout>
         </LinearLayout>
 
