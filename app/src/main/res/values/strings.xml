@@ -77,7 +77,9 @@
     <string name="cthd_signKH">Chữ kí của KH</string>
     <string name="cthd_signTT">Chữ kí người thu tiền</string>
     <string name="cthd_money_label">Thành tiền</string>
-    <string name="cthd_hdtd">Hóa đơn tiền điện</string>
+    <string name="cthd_hdtd_dien">Hóa đơn tiền điện</string>
+    <string name="cthd_hdtd_nuoc">Hóa đơn tiền nước</string>
+    <string name="cthd_hdtd_vienthong">Hóa đơn tiền viễn thông</string>
 
     <!--Bill content-->
     <string name="lblBillContent">NỘI DUNG HÓA ĐƠN</string>

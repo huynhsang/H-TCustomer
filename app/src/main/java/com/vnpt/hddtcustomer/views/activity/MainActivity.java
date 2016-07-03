@@ -1,5 +1,6 @@
 package com.vnpt.hddtcustomer.views.activity;
 
+import android.app.FragmentManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -22,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         getFragment();
 
         setShowNotification();
@@ -76,8 +79,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onBackPressed() {
+        FragmentManager fm = getFragmentManager();
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
         } else {
             super.onBackPressed();
         }
@@ -144,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 toLogout();
                 return false;
         }
-        if((id != R.id.drawer_elec) || (id != R.id.drawer_water) || (id != R.id.drawer_tele)){
+        if((id != R.id.drawer_elec) && (id != R.id.drawer_water) && (id != R.id.drawer_tele)){
             try{
                 fragment = (Fragment) fragmentClass.newInstance();
             } catch (Exception e){
@@ -153,8 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         //Insert the fragment by replacing any existing fragment
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragMainContent, fragment).commit();
-
+        fragmentTransaction.replace(R.id.fragMainContent, fragment).addToBackStack(null).commit();
         drawer.closeDrawer(GravityCompat.START);
         return false;
     }
@@ -174,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         titleMainView.setText(R.string.lblChart);
         ChartFragment chartFragment = new ChartFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragMainContent, chartFragment).commit();
+        fragmentTransaction.replace(R.id.fragMainContent, chartFragment).addToBackStack(null).commit();
     }
 
     private void toSearchListBill(){
@@ -182,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         BillFragment billFragment = new BillFragment();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragMainContent, billFragment).commit();
+        fragmentTransaction.replace(R.id.fragMainContent, billFragment).addToBackStack(null).commit();
 
         titleMainView.setVisibility(View.GONE);
         btnToSearch.setVisibility(View.GONE);
@@ -224,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch (fragmentName){
                 case "NotifyFragment":
                     NotifyFragment notifyFragment = new NotifyFragment();
-                    fragmentTransaction.replace(R.id.fragMainContent, notifyFragment).commit();
+                    fragmentTransaction.replace(R.id.fragMainContent, notifyFragment).addToBackStack(null).commit();
                     titleMainView.setText(R.string.lblNotify);
                     cancelNotification(NOTIFY_ID);
                     break;
@@ -237,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }else{
             HomeFragment homeFragment = new HomeFragment();
-            fragmentTransaction.replace(R.id.fragMainContent, homeFragment).commit();
+            fragmentTransaction.replace(R.id.fragMainContent, homeFragment).addToBackStack(null).commit();
             titleMainView.setText(R.string.lblHome);
         }
     }

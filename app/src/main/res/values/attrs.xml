@@ -2,6 +2,7 @@
 <resources>
     <string name="billType_prompt">Choose a bill type</string>
     <string-array name="billType_arrays">
+        <item>-----Không chọn-----</item>
         <item>Điện</item>
         <item>Nước</item>
         <item>Viễn thông</item>

@@ -65,7 +65,7 @@ public class SearchBillPresenter {
             billList = new ArrayList<Bill>(Arrays.asList(arrayBill));
             initList();
         }else{
-            searchItem(text.toString());
+            searchBillNumber(text.toString());
         }
     }
 
@@ -73,6 +73,15 @@ public class SearchBillPresenter {
         listBillAdapter = new ListBillAdapter(view.getContext() , R.layout.detail_bill_item, billList);
         lvBill = (ListView) view.findViewById(R.id.lvBill);
         lvBill.setAdapter(listBillAdapter);
+    }
+
+    private void searchBillNumber(String text){
+        for(Bill item : arrayBill){
+            if(!item.get_number().contains(text)){
+                billList.remove(item);
+            }
+        }
+        listBillAdapter.notifyDataSetChanged();
     }
 
     private void searchItem(String text){

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import android.graphics.Typeface;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,26 +15,23 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
 public class CTHDActivity extends AppCompatActivity implements View.OnClickListener{
-    private TextView btnToback, btnToRefresh, btnToMoreDetail, titleMainView, cthd_status, cthd_interval, cthd_csdk, cthd_csck, cthd_money;
+    private TextView btnToback, btnToRefresh, btnToMoreDetail, titleMainView, cthd_status, cthd_interval, cthd_csdk, cthd_csck, cthd_money, cthd_timepayV, cthd_hdtd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cthd);
 
-        Typeface fontAwesome = Typeface.createFromAsset(getAssets(),"fonts/fontawesome-webfont.ttf");
 
         btnToback = (TextView) findViewById(R.id.cthd_btntoBack);
-        btnToback.setTypeface(fontAwesome);
         btnToback.setOnClickListener(this);
         btnToRefresh = (TextView) findViewById(R.id.cthd_btntoRefresh);
-        btnToRefresh.setTypeface(fontAwesome);
         btnToMoreDetail = (TextView) findViewById(R.id.cthd_btntoMoreDetail);
-        btnToMoreDetail.setTypeface(fontAwesome);
         btnToMoreDetail.setOnClickListener(this);
-        btnToback.setOnClickListener(this);
         titleMainView=(TextView) findViewById(R.id.cthd_titleMainView);
         titleMainView.setText(R.string.lblBillDetail);
 
+        cthd_hdtd = (TextView) findViewById(R.id.cthd_hdtd);
+        cthd_timepayV = (TextView) findViewById(R.id.cthd_timepayV);
         cthd_status = (TextView) findViewById(R.id.cthd_status);
         cthd_interval = (TextView) findViewById(R.id.cthd_interval);
         cthd_csdk = (TextView) findViewById(R.id.cthd_csdk);
@@ -61,20 +57,25 @@ public class CTHDActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.cthd_btntoMoreDetail:
                 Intent toMoreDetail = new Intent(CTHDActivity.this, BillContentActivity.class);
                 startActivity(toMoreDetail);
-                finish();
+                break;
+            case R.id.cthd_btntoRefresh:
                 break;
         }
     }
 
     private void setDataDetail(){
         Bill bill = (Bill)getIntent().getSerializableExtra("billDetail");
-        /*DataDetail dataDetail = new DataDetail(bill);*/
-        if(bill.get_status().equals("0")){
-            cthd_status.setText(R.string.lblStatus0);
-        }else{
+        if(bill.is_status()){
             cthd_status.setText(R.string.lblStatus1);
+        }else{
+            cthd_status.setText(R.string.lblStatus0);
         }
-        //cthd_status.setText(bill.get_status());
+        if(bill.get_type().equals("Dien")) cthd_hdtd.setText(R.string.cthd_hdtd_dien);
+        else if(bill.get_type().equals("Nuoc")) cthd_hdtd.setText(R.string.cthd_hdtd_nuoc);
+        else if(bill.get_type().equals("Vienthong")) cthd_hdtd.setText(R.string.cthd_hdtd_vienthong);
+
+        cthd_timepayV.setText(bill.get_dueDate());
+
         cthd_interval.setText(new StringBuilder().append("01/").append(bill.get_month()).append("/")
                 .append(bill.get_year()).append(" - 30/").append(bill.get_month()).append("/").append(bill.get_year()));
         cthd_csdk.setText(bill.get_csdk() + "");

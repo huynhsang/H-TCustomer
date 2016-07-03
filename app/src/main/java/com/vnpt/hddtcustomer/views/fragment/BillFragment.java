@@ -23,10 +23,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vnpt.hddtcustomer.R;
-import com.vnpt.hddtcustomer.database.TbInvoice;
+import com.vnpt.hddtcustomer.constants.InvRestURIConstants;
 import com.vnpt.hddtcustomer.models.bill.Bill;
 import com.vnpt.hddtcustomer.presenter.HDDTSharedPreference;
 import com.vnpt.hddtcustomer.presenter.SearchBillPresenter;
+import com.vnpt.hddtcustomer.presenter.db.GetDataArray;
+import com.vnpt.hddtcustomer.presenter.db.JsonToBillList;
 import com.vnpt.hddtcustomer.views.activity.CTHDActivity;
 import com.vnpt.hddtcustomer.views.activity.MainActivity;
 import com.vnpt.hddtcustomer.views.adapter.ListBillAdapter;
@@ -39,8 +41,9 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
     private TextView btnSearch, btnChart;
     private ListBillAdapter listBillAdapter;
     private SearchBillPresenter searchBillPresenter;
+    private LinearLayout linearNavigator;
     private int currentUserId;
-    private String type;
+    private String type = "", dateFrom, dateTo ;
     private static final String KEY_PREFS = "CurrentUserID";
 
     public BillFragment(){
@@ -52,18 +55,28 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         this.type = type;
     }
 
+    @SuppressLint("ValidFragment")
+    public BillFragment(String from, String to){
+        this.dateFrom = from;
+        this.dateTo = to;
+    }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         listBill = new ArrayList<Bill>();
-        TbInvoice tbInvoice = new TbInvoice(this.getActivity());
         currentUserId = Integer.parseInt(new HDDTSharedPreference(this.getActivity()).getValue(KEY_PREFS));
+        String url = "";
+
         if(type.equals("all")){
-            listBill = tbInvoice.getAllBillFollowOwner(currentUserId);
+            url = InvRestURIConstants.GET_INV_FOLLOW_OWNER + currentUserId;
+        }else if(type.equals("")){
+            url = InvRestURIConstants.GET_INV_FOLLOW_PERIOD + currentUserId +"/from=" + dateFrom + "&to=" +dateTo;
         }else{
-            listBill = tbInvoice.getOwnerBillFollowType(currentUserId, type);
+            url = InvRestURIConstants.GET_INV_FOLLOW_TYPE + currentUserId +"/type=" + type;
         }
+        listBill = new JsonToBillList(new GetDataArray(url).getJsonArray()).convertToBillList();
     }
 
 
@@ -74,6 +87,7 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         lvBill = (ListView) billView.findViewById(R.id.lvBill);
         btnSearch = (TextView) billView.findViewById(R.id.btnSearch);
         btnChart = (TextView) billView.findViewById(R.id.btnChart);
+        linearNavigator = (LinearLayout) billView.findViewById(R.id.navigatorBill);
 
         etSearchBill = ((MainActivity)getActivity()).getEtSearchBill();
         hideBtnChart();
@@ -114,6 +128,7 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         Bill bill = (Bill) lvBill.getAdapter().getItem(position);
 
         Intent toDetail = new Intent(getActivity(), CTHDActivity.class);
+        System.out.println("to detail");
         toDetail.putExtra("billDetail", bill);
         startActivity(toDetail);
     }
@@ -131,6 +146,10 @@ public class BillFragment extends Fragment implements AdapterView.OnItemClickLis
         if(type.equals("all")){
             btnChart.setVisibility(View.GONE);
         }
+    }
+
+    public void hideNavigatorBill(){
+        linearNavigator.setVisibility(View.GONE);
     }
 
 }

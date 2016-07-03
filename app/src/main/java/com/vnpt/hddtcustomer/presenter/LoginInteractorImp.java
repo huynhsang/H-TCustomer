@@ -1,71 +1,52 @@
 package com.vnpt.hddtcustomer.presenter;
 
-import android.content.Context;
 import android.os.Handler;
 import android.text.TextUtils;
 
-import com.vnpt.hddtcustomer.database.TbCustomer;
+import com.vnpt.hddtcustomer.constants.CusRestURIConstants;
 import com.vnpt.hddtcustomer.interfaces.LoginInteractor;
 import com.vnpt.hddtcustomer.interfaces.OnLoginFinishedListener;
-import com.vnpt.hddtcustomer.models.User.Customer;
+import com.vnpt.hddtcustomer.presenter.db.GetDataArray;
+import com.vnpt.hddtcustomer.presenter.db.GetDataObject;
 
-import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class LoginInteractorImp implements LoginInteractor {
 
     private static final int LOGIN_TIMEOUT=1000;
-    private List<Customer> _customerList;
     private int currentUserId;
 
-
     @Override
-    public boolean checkUsernameError(String username) {
+    public void checkLogin(final String username, final String password, final OnLoginFinishedListener listener) {
+        String path = CusRestURIConstants.DO_LOGIN + "username="+ username + "&password="+ password;
+        GetDataObject requestData = new GetDataObject(path);
+        final JSONObject jsonObject = requestData.getJsonObject();
 
-        if((TextUtils.isEmpty(username)) || (username.length() > 100)){
-            return true;
-        }
-        for(int i=0; i<_customerList.size(); i++){
-            if(username.equals(_customerList.get(i).get_email())){
-                currentUserId = _customerList.get(i).get_id();
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override
-    public boolean checkPasswordError(String password) {
-        if(TextUtils.isEmpty(password) || (password.length() > 15)){
-            return true;
-        }
-        for(int i=0; i<_customerList.size(); i++){
-            if(password.equals(_customerList.get(i).get_password())){
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override
-    public void checkLogin(final String username, final String password, final List<Customer> customerList, final OnLoginFinishedListener listener) {
-        this._customerList = customerList;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 boolean error = false;
-                if(checkUsernameError(username)){
+                if((TextUtils.isEmpty(username)) || (username.length() > 100) || (jsonObject == null) ){
                     listener.onUsernameError();
                     error = true;
                 }
-                if(checkPasswordError(password)){
+                if((TextUtils.isEmpty(password)) || (password.length() > 15) || (jsonObject == null)){
                     listener.onPasswordError();
                     error = true;
                 }
                 if(!error){
-                    listener.onSuccess(currentUserId);
+                    try {
+                        currentUserId = jsonObject.getInt("id");
+                        listener.onSuccess(currentUserId);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }, LOGIN_TIMEOUT);
     }
+
 }

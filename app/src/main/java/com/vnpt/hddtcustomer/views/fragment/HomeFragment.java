@@ -16,10 +16,13 @@ import android.view.ViewGroup;
 import com.vnpt.hddtcustomer.R;
 import com.vnpt.hddtcustomer.views.adapter.ViewPagerAdapter;
 
+import java.util.Calendar;
+
 public class HomeFragment extends Fragment {
     private View homeView;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private String dateFrom, dateTo;
 
     @Nullable
     @Override
@@ -38,9 +41,20 @@ public class HomeFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager)
     {
+        int month = Calendar.getInstance().get(Calendar.MONTH);
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        if(month-3<0)   dateFrom = (year-1) +"-"+(12 + month-2)+"-01";
+        else dateFrom = year + "-" + (month-2) + "-01";
+
+        dateTo = year + "-" + (month+1) + "-" + day;
+
+        System.out.println(dateFrom + " and " + dateTo);
+
+
         ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
         adapter.addFragment(new TabNotificationFrag(),"Thông báo ");
-        adapter.addFragment(new TabRecentBillFrag(), "Hóa đơn gần đây");
+        adapter.addFragment(new BillFragment(dateFrom, dateTo), "Hóa đơn gần đây");
         viewPager.setAdapter(adapter);
     }
 

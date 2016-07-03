@@ -53,7 +53,7 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.setTextView(bill.get_month(), bill.get_year(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_price(), bill.get_status(), bill.get_type());
+        holder.setTextView(bill.get_month(), bill.get_year(), bill.get_csdk(), bill.get_csck(), bill.get_sl(), bill.get_price(), bill.is_status(), bill.get_type());
         return convertView;
     }
 
@@ -84,10 +84,10 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             tvSL = (TextView) v.findViewById(R.id.slBill);
             tvMoney = (TextView) v.findViewById(R.id.moneyBill);
             tvStatus = (TextView) v.findViewById(R.id.statusBill);
-            checkBox = (CheckBox) v.findViewById(R.id.checkbox);
+            checkBox = (CheckBox) v.findViewById(R.id.check_status);
         }
 
-        public void setTextView(int monthBill, int yearBill, int csdkBill, int csckBill, int slBill, int moneyBill, String statusBill, String typeBill ){
+        public void setTextView(int monthBill, int yearBill, int csdkBill, int csckBill, int slBill, String moneyBill, boolean statusBill, String typeBill ){
             tvMonth.setText("T"+monthBill);
             tvYear.setText(""+yearBill);
             tvCSDK.setText(csdkBill + "");
@@ -97,7 +97,7 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             } else if (typeBill.equals("Nuoc")){
                 tvSL.setText(slBill + " m\u00B3");
             } else if (typeBill.equals("Vienthong")){
-                tvSL.setText("" + slBill);
+                tvSL.setText(slBill + "");
             }
 
             DecimalFormat format = new DecimalFormat("#,###.00");
@@ -105,12 +105,12 @@ public class ListBillAdapter extends ArrayAdapter<Bill>{
             double number = Double.parseDouble(""+moneyBill);
             tvMoney.setText(format.format(number) + "đ");
 
-            if(statusBill.equals("0")){
-                tvStatus.setText(R.string.lblStatus0);
-                checkBox.setChecked(false);
-            }else{
+            if(statusBill){
                 tvStatus.setText(R.string.lblStatus1);
                 checkBox.setChecked(true);
+            }else{
+                tvStatus.setText(R.string.lblStatus0);
+                checkBox.setChecked(false);
             }
         }
 
